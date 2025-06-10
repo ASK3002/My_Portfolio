@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ask3002.github.io/Basic_React_Projects/react_router_page/",
+  "homepage": "https://ask3002.github.io/react_router_page/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,7 +12,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
