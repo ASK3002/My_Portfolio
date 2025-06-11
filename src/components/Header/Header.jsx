@@ -8,8 +8,8 @@ export default function Header() {
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
                         <img
-                            src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                            className="mr-3 h-8 w-8"
+                            src="https://www.churchleadership.com/wp-content/uploads/2017/03/10WaystoMastertheArtofAsking.jpg"
+                            className="mr-3 h-16 w-16 rounded-full"
                             alt="Logo"
                         />
                     </Link>

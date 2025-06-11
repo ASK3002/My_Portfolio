@@ -9,8 +9,8 @@ export default function Footer() {
                     <div className="mb-6 md:mb-0">
                         <Link to="/" className="flex items-center">
                             <img
-                                src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                                className="mr-3 h-16"
+                                src="https://www.churchleadership.com/wp-content/uploads/2017/03/10WaystoMastertheArtofAsking.jpg"
+                                className="mr-3 h-16 rounded-r-3xl"
                                 alt="Logo"
                             />
                         </Link>
@@ -36,7 +36,7 @@ export default function Footer() {
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
                                     <a
-                                        href="https://github.com/hiteshchoudhary"
+                                        href="https://github.com/ASK3002"
                                         className="hover:underline"
                                         target="_blank"
                                         rel="noreferrer"
