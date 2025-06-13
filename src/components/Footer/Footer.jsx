@@ -9,7 +9,7 @@ export default function Footer() {
                     <div className="mb-6 md:mb-0">
                         <Link to="/" className="flex items-center">
                             <img
-                                src="https://www.churchleadership.com/wp-content/uploads/2017/03/10WaystoMastertheArtofAsking.jpg"
+                                src="https://static.vecteezy.com/system/resources/previews/020/617/232/non_2x/ask-letter-logo-design-in-illustration-logo-calligraphy-designs-for-logo-poster-invitation-etc-vector.jpg"
                                 className="mr-3 h-16 rounded-r-3xl"
                                 alt="Logo"
                             />
@@ -45,8 +45,8 @@ export default function Footer() {
                                     </a>
                                 </li>
                                 <li>
-                                    <Link to="/" className="hover:underline">
-                                        Discord
+                                    <Link to="/contact" className="hover:underline">
+                                        Contact
                                     </Link>
                                 </li>
                             </ul>

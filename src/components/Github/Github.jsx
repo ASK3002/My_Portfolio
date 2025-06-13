@@ -60,9 +60,9 @@ function Github() {
                         return (
                             <div
                                 key={repo.id}
-                                className="min-w-[300px] max-w-[500px] bg-yellow-900/35 p-5 rounded-xl shadow-lg flex-shrink-0 "
+                                className="min-w-[300px] max-w-[500px] bg-yellow-900/40 p-5 rounded-xl shadow-lg flex-shrink-0 "
                             >
-                                <h2 className="text-lg font-semibold mb-4 bg-orange-800 p-2 rounded">{repo.name}</h2>
+                                <h2 className="text-lg font-semibold mb-4 p-2 rounded">{repo.name}</h2>
 
                                 <div className="flex flex-col space-y-3">
                                     <a

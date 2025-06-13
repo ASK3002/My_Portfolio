@@ -8,8 +8,8 @@ export default function Header() {
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
                         <img
-                            src="https://www.churchleadership.com/wp-content/uploads/2017/03/10WaystoMastertheArtofAsking.jpg"
-                            className="mr-3 h-16 w-16 rounded-full"
+                            src="https://static.vecteezy.com/system/resources/previews/020/617/232/non_2x/ask-letter-logo-design-in-illustration-logo-calligraphy-designs-for-logo-poster-invitation-etc-vector.jpg"
+                            className="mr-3 h-24 w-24 rounded-full"
                             alt="Logo"
                         />
                     </Link>
@@ -36,7 +36,7 @@ export default function Header() {
                                 <NavLink
                                 to="/"
                                     className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "bg-orange-700/50" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-1 rounded`
                                     }
                                 >
                                     Home
@@ -46,7 +46,7 @@ export default function Header() {
                                 <NavLink
                                 to="/about"
                                     className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "bg-orange-700/50" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-1 rounded`
                                     }
                                 >
                                     About
@@ -56,7 +56,7 @@ export default function Header() {
                                 <NavLink
                                 to="/contact"
                                     className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "bg-orange-700/50" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-1 rounded`
                                     }
                                 >
                                     Contact
@@ -66,7 +66,7 @@ export default function Header() {
                                 <NavLink
                                 to="/github"
                                     className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "bg-orange-700/50" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-1 rounded`
                                     }
                                 >
                                     Github

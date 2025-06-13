@@ -12,23 +12,25 @@ export default function About() {
               <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
                   <div className="md:5/12 lg:w-5/12">
                       <img
-                          src="https://img.freepik.com/free-photo/fairytale-scene-coming-out-book_23-2151778550.jpg?semt=ais_hybrid&w=740"
+                          src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Curdie_went_on_after_her%2C_flashing_his_torch_about..jpg"
                           alt="image"
-                          className='rounded-full h-52'
+                          className='rounded-full h-60 w-60 ml-24'
                       />
                   </div>
-                  <div className="rounded-xl p-3 md:7/12 lg:w-6/12 bg-yellow-900/60">
+                  <div className="rounded-xl p-3 md:7/12 lg:w-6/12 bg-yellow-900/80">
                       <h2 className="text-2xl text-white font-bold md:text-4xl">
-                          React development is carried out by passionate developers
+                        👋 About Me
+                          
                       </h2>
-                      <p className="mt-6 text-gray-600">
-                          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis voluptatem
-                          accusantium nemo perspiciatis delectus atque autem! Voluptatum tenetur beatae unde
-                          aperiam, repellat expedita consequatur! Officiis id consequatur atque doloremque!
+                      <p className="mt-6 text-white">
+                          I'm a second-year B.Tech Computer Science student at IIITDM Jabalpur with a strong academic record (CPI: 9.5).
+                          I enjoy building web projects using HTML, CSS, JavaScript, and React, and I'm currently learning backend development with Node.js and MongoDB.
+                          Next on my roadmap is diving into Next.js to enhance my full-stack skills.
                       </p>
-                      <p className="mt-4 text-gray-600">
-                          Nobis minus voluptatibus pariatur dignissimos libero quaerat iure expedita at?
-                          Asperiores nemo possimus nesciunt dicta veniam aspernatur quam mollitia.
+                      <p className="mt-4 text-white">
+                          Beyond tech, I'm a creative communicator with a background in leadership, debate, and art competitions.
+                          I believe in consistency, curiosity, and growing step by step — both as a learner and as a person.
+                          Let’s connect and learn together! 🚀
                       </p>
                   </div>
               </div>
