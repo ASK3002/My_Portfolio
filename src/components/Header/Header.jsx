@@ -1,82 +1,117 @@
-import React from 'react'
-import {Link, NavLink} from 'react-router-dom'
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import {
+  FaLinkedin,
+  FaGithub,
+  FaMedium,
+  FaHome,
+  FaCogs,
+  FaProjectDiagram,
+  FaUser,
+} from 'react-icons/fa';
+
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 export default function Header() {
-    return (
-        <header className="shadow sticky z-50 top-0">
-            <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
-                <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                    <Link to="/" className="flex items-center">
-                        <img
-                            src="https://static.vecteezy.com/system/resources/previews/020/617/232/non_2x/ask-letter-logo-design-in-illustration-logo-calligraphy-designs-for-logo-poster-invitation-etc-vector.jpg"
-                            className="mr-3 h-24 w-24 rounded-full"
-                            alt="Logo"
-                        />
-                    </Link>
-                    <div className="flex items-center lg:order-2">
-                        <Link
-                            to="#"
-                            className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
-                        >
-                            Log in
-                        </Link>
-                        <Link
-                            to="#"
-                            className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
-                        >
-                            Get started
-                        </Link>
-                    </div>
-                    <div
-                        className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
-                        id="mobile-menu-2"
-                    >
-                        <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                            <li>
-                                <NavLink
-                                to="/"
-                                    className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "bg-orange-700/50" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-1 rounded`
-                                    }
-                                >
-                                    Home
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                to="/about"
-                                    className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "bg-orange-700/50" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-1 rounded`
-                                    }
-                                >
-                                    About
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                to="/contact"
-                                    className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "bg-orange-700/50" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-1 rounded`
-                                    }
-                                >
-                                    Contact
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                to="/github"
-                                    className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "bg-orange-700/50" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-1 rounded`
-                                    }
-                                >
-                                    Github
-                                </NavLink>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    );
+  return (
+    <header className="shadow sticky z-50 top-0 bg-white dark:bg-gray-900">
+      <nav className="border-gray-200 px-4 lg:px-6 py-2.5">
+        <div className="flex flex-wrap items-center justify-between w-full">
+
+          {/* Logo + Name */}
+          <div className="flex items-center space-x-3 pl-2">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/020/617/232/non_2x/ask-letter-logo-design-in-illustration-logo-calligraphy-designs-for-logo-poster-invitation-etc-vector.jpg"
+              className="h-20 w-20 rounded-full object-cover"
+              alt="Logo"
+            />
+            <span className="text-xl font-semibold whitespace-nowrap text-gray-800 dark:text-white">
+              Ayush Singh Kaushik
+            </span>
+          </div>
+
+          {/* Center Nav: Icons only */}
+          <div className="hidden lg:flex space-x-6">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `text-xl px-3 py-2 rounded transition duration-200 ${
+                  isActive
+                    ? 'bg-orange-700/50 text-white'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
+                }`
+              }
+            >
+              <FaHome />
+            </NavLink>
+            <NavLink
+              to="/Skills"
+              className={({ isActive }) =>
+                `text-xl px-3 py-2 rounded transition duration-200 ${
+                  isActive
+                    ? 'bg-orange-700/50 text-white'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
+                }`
+              }
+            >
+              <FaCogs />
+            </NavLink>
+            <NavLink
+              to="/Github"
+              className={({ isActive }) =>
+                `text-xl px-3 py-2 rounded transition duration-200 ${
+                  isActive
+                    ? 'bg-orange-700/50 text-white'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
+                }`
+              }
+            >
+              <FaProjectDiagram />
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `text-xl px-3 py-2 rounded transition duration-200 ${
+                  isActive
+                    ? 'bg-orange-700/50 text-white'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
+                }`
+              }
+            >
+              <FaUser />
+            </NavLink>
+          </div>
+
+          {/* Right: Social Icons + Theme Toggle */}
+          <div className="hidden lg:flex items-center space-x-4 pr-2">
+            <a
+              href="https://www.linkedin.com/in/ayush-singh-kaushik-7386a4294/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400"
+            >
+              <FaLinkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="https://github.com/ASK3002"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400"
+            >
+              <FaGithub className="w-5 h-5" />
+            </a>
+            <a
+              href="https://medium.com/@ayushsinghkaushik111"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400"
+            >
+              <FaMedium className="w-5 h-5" />
+            </a>
+            <ThemeToggle />
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
 }
