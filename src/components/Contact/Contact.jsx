@@ -6,28 +6,32 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
 
   const sendEmail = (e) => {
-    e.preventDefault();
+  e.preventDefault();
+  setSent(true); // show message instantly
 
-    const serviceID = 'service_y24zs86';
-    const templateToYou = 'template_5a6jbi8';
-    const templateToUser = 'template_k4omii6';
-    const userID = 'mKkAQbu5ExfW6Qz-S';
+  const serviceID = 'service_y24zs86';
+  const templateToYou = 'template_5a6jbi8';
+  const templateToUser = 'template_k4omii6';
+  const userID = 'mKkAQbu5ExfW6Qz-S';
 
-    // First: send email to yourself
-    emailjs.sendForm(serviceID, templateToYou, form.current, userID)
-      .then(() => {
-        // Then: send auto-reply to user
-        return emailjs.sendForm(serviceID, templateToUser, form.current, userID);
-      })
-      .then(() => {
-        form.current.reset();
-        setSent(true);
-        setTimeout(() => setSent(false), 4000); // Hide after 4 seconds
-      })
-      .catch((error) => {
-        console.error('Email error:', error);
-      });
-  };
+  // Send to you
+  emailjs.sendForm(serviceID, templateToYou, form.current, userID)
+    .then(() => {
+      // Send auto-reply
+      return emailjs.sendForm(serviceID, templateToUser, form.current, userID);
+    })
+    .then(() => {
+      form.current.reset();
+    })
+    .catch((error) => {
+      console.error('Email error:', error);
+    })
+    .finally(() => {
+      // Hide "Message Sent" after 4s no matter what
+      setTimeout(() => setSent(false), 4000);
+    });
+};
+
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
