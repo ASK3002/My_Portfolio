@@ -7,12 +7,13 @@ function Github() {
   const deployedLinks = {
     "Basic_React_Projects": "https://ask3002.github.io/Basic_React_Projects/",
     "BASIC_PROJECTS_HTML_CSS_JS": "https://ask3002.github.io/BASIC_PROJECTS_HTML_CSS_JS/",
+    "My_Portfolio": "https://ayushsinghkaushik-portfolio.netlify.app/"
   };
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 py-16 px-4">
       <h1 className="text-4xl font-bold mb-10 text-center text-amber-900 dark:text-orange-300">
-        My GitHub Repositories
+        My Projects
       </h1>
 
       {repos && repos.length > 0 ? (
