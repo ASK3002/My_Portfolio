@@ -24,7 +24,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky z-50 top-0 bg-white dark:bg-gray-900 shadow-md">
+    <header className="sticky z-50 top-0 bg-white dark:bg-gray-900 ">
       <nav className="border-gray-200 px-4 lg:px-6 py-2.5">
         <div className="flex items-center justify-between w-full">
           {/* Logo + Name */}
