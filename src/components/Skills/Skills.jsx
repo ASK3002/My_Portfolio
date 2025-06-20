@@ -18,7 +18,7 @@ import {
   SiExpress
 } from 'react-icons/si';
 
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 const programmingStack = [
   { name: 'C++', icon: <SiCplusplus className="text-blue-600 w-8 h-8" /> },
@@ -42,7 +42,7 @@ const toolsAndTechnologies = [
 
 export default function Skills() {
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -94,6 +94,6 @@ export default function Skills() {
         </div>
       </div>
     </div>
-    </motion.div>
+    </Motion.div>
   );
 }

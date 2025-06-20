@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion  as Motion} from 'framer-motion';
 
 function Github() {
   const repos = useLoaderData();
@@ -12,7 +12,7 @@ function Github() {
   };
 
   return (
-    <motion.div
+    <Motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -68,7 +68,7 @@ function Github() {
         </p>
       )}
     </div>
-    </motion.div>
+    </Motion.div>
   );
 }
 

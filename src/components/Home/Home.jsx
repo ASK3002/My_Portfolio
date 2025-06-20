@@ -1,12 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <motion.div
+    <Motion.div
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -44,6 +44,6 @@ export default function Home() {
         </div>
       </div>
     </div>
-    </motion.div>
+    </Motion.div>
   );
 }
