@@ -15,7 +15,7 @@ import Contact from './components/Contact/Contact';
 import Skills from './components/Skills/Skills';
 import Layout from './Layout';
 import Github, { githubInfoLoader } from './components/Projects/Projects';
-import Projects from './components/Projects/Projects'; // ← You should create this file
+import Projects from './components/Projects/Projects'; 
 
 const router = createBrowserRouter(
   createRoutesFromElements(

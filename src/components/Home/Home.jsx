@@ -1,10 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const navigate = useNavigate();
 
   return (
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="min-h-screen w-full bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
+    >
     <div className="w-full min-h-screen pt-24 bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 px-4 flex flex-col items-center justify-start">
       <div className="text-center max-w-3xl space-y-6">
         {/* Name */}
@@ -37,5 +44,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </motion.div>
   );
 }

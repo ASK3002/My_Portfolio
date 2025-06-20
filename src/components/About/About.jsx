@@ -1,7 +1,14 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function About() {
   return (
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="min-h-screen w-full bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
+    >
     <div className="w-full bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 min-h-screen py-16 px-4 transition-colors duration-300">
       <div className="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10">
         
@@ -32,5 +39,6 @@ export default function About() {
         </div>
       </div>
     </div>
+    </motion.div>
   );
 }

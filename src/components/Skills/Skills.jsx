@@ -18,6 +18,8 @@ import {
   SiExpress
 } from 'react-icons/si';
 
+import { motion } from 'framer-motion';
+
 const programmingStack = [
   { name: 'C++', icon: <SiCplusplus className="text-blue-600 w-8 h-8" /> },
   { name: 'Python', icon: <FaPython className="text-yellow-500 w-8 h-8" /> },
@@ -40,6 +42,12 @@ const toolsAndTechnologies = [
 
 export default function Skills() {
   return (
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="min-h-screen w-full bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
+    >
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 py-16 px-4">
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">Technical Skills</h1>
@@ -86,5 +94,6 @@ export default function Skills() {
         </div>
       </div>
     </div>
+    </motion.div>
   );
 }

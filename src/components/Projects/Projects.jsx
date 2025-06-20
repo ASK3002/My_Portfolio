@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function Github() {
   const repos = useLoaderData();
@@ -11,6 +12,12 @@ function Github() {
   };
 
   return (
+    <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="min-h-screen w-full bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
+        >
     <div className="w-full min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 py-16 px-4">
       <h1 className="text-4xl font-bold mb-10 text-center text-amber-900 dark:text-orange-300">
         My Projects
@@ -61,6 +68,7 @@ function Github() {
         </p>
       )}
     </div>
+    </motion.div>
   );
 }
 
