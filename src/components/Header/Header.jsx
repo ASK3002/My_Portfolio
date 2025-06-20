@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import {
   FaLinkedin,
   FaGithub,
@@ -8,21 +8,30 @@ import {
   FaCogs,
   FaProjectDiagram,
   FaUser,
+  FaBars,
+  FaTimes,
 } from 'react-icons/fa';
-
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 export default function Header() {
-  return (
-    <header className=" sticky z-50 top-0 bg-white dark:bg-gray-900">
-      <nav className="border-gray-200 px-4 lg:px-6 py-2.5">
-        <div className="flex flex-wrap items-center justify-between w-full">
+  const [isOpen, setIsOpen] = useState(false);
 
+  const navLinks = [
+    { path: '/', label: 'Home', icon: FaHome },
+    { path: '/Skills', label: 'Skills', icon: FaCogs },
+    { path: '/Github', label: 'Projects', icon: FaProjectDiagram },
+    { path: '/about', label: 'About', icon: FaUser },
+  ];
+
+  return (
+    <header className="sticky z-50 top-0 bg-white dark:bg-gray-900 shadow-md">
+      <nav className="border-gray-200 px-4 lg:px-6 py-2.5">
+        <div className="flex items-center justify-between w-full">
           {/* Logo + Name */}
           <div className="flex items-center space-x-3 pl-2">
             <img
               src="https://static.vecteezy.com/system/resources/previews/020/617/232/non_2x/ask-letter-logo-design-in-illustration-logo-calligraphy-designs-for-logo-poster-invitation-etc-vector.jpg"
-              className="h-20 w-20 rounded-full object-cover"
+              className="h-16 w-16 rounded-full object-cover"
               alt="Logo"
             />
             <span className="text-xl font-semibold whitespace-nowrap text-gray-800 dark:text-white">
@@ -30,87 +39,111 @@ export default function Header() {
             </span>
           </div>
 
-          {/* Center Nav: Icons only */}
+          {/* Desktop Nav */}
           <div className="hidden lg:flex space-x-6">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `text-xl px-3 py-2 rounded transition duration-200 ${
-                  isActive
-                    ? 'bg-orange-700/50 text-white'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
-                }`
-              }
-            >
-              <FaHome />
-            </NavLink>
-            <NavLink
-              to="/Skills"
-              className={({ isActive }) =>
-                `text-xl px-3 py-2 rounded transition duration-200 ${
-                  isActive
-                    ? 'bg-orange-700/50 text-white'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
-                }`
-              }
-            >
-              <FaCogs />
-            </NavLink>
-            <NavLink
-              to="/Github"
-              className={({ isActive }) =>
-                `text-xl px-3 py-2 rounded transition duration-200 ${
-                  isActive
-                    ? 'bg-orange-700/50 text-white'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
-                }`
-              }
-            >
-              <FaProjectDiagram />
-            </NavLink>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `text-xl px-3 py-2 rounded transition duration-200 ${
-                  isActive
-                    ? 'bg-orange-700/50 text-white'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
-                }`
-              }
-            >
-              <FaUser />
-            </NavLink>
+            {navLinks.map((nav) => (
+              <NavLink
+                key={nav.path}
+                to={nav.path}
+                className={({ isActive }) =>
+                  `text-xl px-3 py-2 rounded transition duration-200 ${
+                    isActive
+                      ? 'bg-orange-700/50 text-white'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
+                  }`
+                }
+              >
+                <nav.icon />
+              </NavLink>
+            ))}
           </div>
 
-          {/* Right: Social Icons + Theme Toggle */}
+          {/* Desktop Socials + Toggle */}
           <div className="hidden lg:flex items-center space-x-4 pr-2">
             <a
               href="https://www.linkedin.com/in/ayush-singh-kaushik-7386a4294/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400"
             >
-              <FaLinkedin className="w-5 h-5" />
+              <FaLinkedin className="w-5 h-5 text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400" />
             </a>
             <a
               href="https://github.com/ASK3002"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400"
             >
-              <FaGithub className="w-5 h-5" />
+              <FaGithub className="w-5 h-5 text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400" />
             </a>
             <a
               href="https://medium.com/@ayushsinghkaushik111"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400"
             >
-              <FaMedium className="w-5 h-5" />
+              <FaMedium className="w-5 h-5 text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400" />
             </a>
             <ThemeToggle />
           </div>
+
+          {/* Mobile Hamburger Icon */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden text-gray-700 dark:text-gray-300"
+          >
+            {isOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="lg:hidden mt-4 space-y-3">
+            {/* Links */}
+            <div className="flex flex-col items-center space-y-4">
+              {navLinks.map((nav) => (
+                <NavLink
+                  key={nav.path}
+                  to={nav.path}
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    `text-xl p-2 rounded flex items-center gap-2 ${
+                      isActive
+                        ? 'bg-orange-700/50 text-white'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
+                    }`
+                  }
+                >
+                  <nav.icon />
+                  <span>{nav.label}</span>
+                </NavLink>
+              ))}
+            </div>
+
+            {/* Socials */}
+            <div className="flex flex-col items-center space-y-4 pt-4 border-t border-gray-300 dark:border-gray-600">
+              <a
+                href="https://www.linkedin.com/in/ayush-singh-kaushik-7386a4294/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://github.com/ASK3002"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="w-5 h-5" />
+              </a>
+              <a
+                href="https://medium.com/@ayushsinghkaushik111"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaMedium className="w-5 h-5" />
+              </a>
+              <ThemeToggle />
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );
