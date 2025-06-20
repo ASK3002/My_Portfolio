@@ -24,15 +24,15 @@ export default function Home() {
             href="https://medium.com/@ayushsinghkaushik111"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-orange-700 text-white rounded-lg font-semibold hover:bg-orange-600 transition"
+            className="px-6 py-3 bg-orange-700 shadow-lg text-white rounded-lg font-semibold hover:bg-orange-600 transition"
           >
-            Read My Articles
+            📜 Read My Articles
           </a>
           <button
             onClick={() => navigate('/contact')}
             className="px-6 py-3 bg-transparent border-2 border-orange-700 text-orange-700 dark:text-orange-400 dark:border-orange-400 rounded-lg font-semibold hover:bg-orange-100 dark:hover:bg-gray-800 transition"
           >
-            Contact Me
+            📞 Contact Me
           </button>
         </div>
       </div>
