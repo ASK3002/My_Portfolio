@@ -10,6 +10,8 @@ import {
   FaGit,
   FaDocker,
   FaMicrosoft,
+  FaCloud,
+  FaEnvelope,
 } from 'react-icons/fa';
 
 import {
@@ -48,6 +50,8 @@ const toolsAndTechnologies = [
   { name: 'Postman', icon: <SiPostman className="text-orange-500 w-8 h-8" /> },
   { name: 'Replit', icon: <SiReplit className="text-yellow-400 w-8 h-8" /> },
   { name: 'Microsoft', icon: <FaMicrosoft className="text-blue-700 w-8 h-8" /> },
+  { name: 'Cloudinary', icon: <FaCloud className="text-indigo-400 w-8 h-8" /> }, // example icon
+  { name: 'EmailJS', icon: <FaEnvelope className="text-pink-500 w-8 h-8" /> },    // example icon
 ];
 
 export default function Skills() {
