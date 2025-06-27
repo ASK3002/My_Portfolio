@@ -7,7 +7,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+    fontFamily: {
+  sans: ['Delius', 'cursive'],      // for body text
+  serif: ['DM Serif Text', 'serif'], // for headings
+},
+
+    },
   },
   plugins: [
     scrollbarHide

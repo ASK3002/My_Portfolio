@@ -1,3 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Dancing+Script:wght@400..700&family=Delius&family=Inconsolata:wght@200..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-sans; /* uses Delius */
+}
+
+h1, h2 {
+  @apply font-serif; /* uses DM Serif Text */
+}

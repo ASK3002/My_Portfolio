@@ -40,7 +40,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* Info Panel */}
-            <div className="p-6 mr-2 ml-3 bg-yellow-500/50 dark:bg-yellow-600/30 sm:rounded-lg">
+            <div className="p-6 mr-2 ml-3 bg-yellow-200/50 dark:bg-blue-800/30 sm:rounded-lg">
               <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-black dark:text-white">Get in touch:</h1>
               <p className="text-lg sm:text-xl font-medium text-black dark:text-gray-200 mt-2">Fill in the form to start a conversation</p>
               <div className="flex items-center mt-8 text-black dark:text-gray-200">
@@ -60,16 +60,16 @@ export default function Contact() {
             {/* Form */}
             <form ref={form} onSubmit={sendEmail} className="p-6 flex flex-col justify-center">
               <input name="name" placeholder="Full Name" required
-                className="w-full mt-2 py-3 px-3 rounded-lg bg-yellow-500/50 dark:bg-yellow-600/30 border border-gray-400 text-black dark:text-white font-semibold focus:border-orange-500 focus:outline-none"
+                className="w-full mt-2 py-3 px-3 rounded-lg bg-yellow-200/50 dark:bg-blue-800/30 border border-gray-400 text-black dark:text-white font-semibold focus:border-orange-500 focus:outline-none"
               />
               <input name="email" type="email" placeholder="Email" required
-                className="w-full mt-2 py-3 px-3 rounded-lg bg-yellow-500/50 dark:bg-yellow-600/30 border border-gray-400 text-black dark:text-white font-semibold focus:border-orange-500 focus:outline-none"
+                className="w-full mt-2 py-3 px-3 rounded-lg bg-yellow-200/50 dark:bg-blue-800/30 border border-gray-400 text-black dark:text-white font-semibold focus:border-orange-500 focus:outline-none"
               />
               <input name="phone" placeholder="Telephone Number"
-                className="w-full mt-2 py-3 px-3 rounded-lg bg-yellow-500/50 dark:bg-yellow-600/30 border border-gray-400 text-black dark:text-white font-semibold focus:border-orange-500 focus:outline-none"
+                className="w-full mt-2 py-3 px-3 rounded-lg bg-yellow-200/50 dark:bg-blue-800/30 border border-gray-400 text-black dark:text-white font-semibold focus:border-orange-500 focus:outline-none"
               />
               <textarea name="message" rows="4" placeholder="Your Message"
-                className="w-full mt-2 py-3 px-3 rounded-lg bg-yellow-500/50 dark:bg-yellow-600/30 border border-gray-400 text-black dark:text-white font-semibold focus:border-orange-500 focus:outline-none"
+                className="w-full mt-2 py-3 px-3 rounded-lg bg-yellow-200/50 dark:bg-blue-800/30 border border-gray-400 text-black dark:text-white font-semibold focus:border-orange-500 focus:outline-none"
               ></textarea>
 
               <button

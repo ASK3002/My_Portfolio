@@ -19,7 +19,7 @@ function Github() {
           className="min-h-screen w-full bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
         >
     <div className="w-full min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 py-16 px-4">
-      <h1 className="text-4xl font-bold mb-10 text-center text-amber-900 dark:text-orange-300">
+      <h1 className="text-4xl  mb-10 text-center text-amber-900 dark:text-orange-300">
         My Projects
       </h1>
 
@@ -33,7 +33,7 @@ function Github() {
                 key={repo.id}
                 className="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 flex flex-col justify-between transition hover:shadow-xl"
               >
-                <h2 className="text-lg text-center font-semibold text-gray-900 dark:text-white mb-4">
+                <h2 className="text-lg text-center  text-gray-900 dark:text-white mb-4">
                   {repo.name}
                 </h2>
 

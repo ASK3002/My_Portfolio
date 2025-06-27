@@ -15,7 +15,7 @@ export default function Home() {
     <div className="w-full min-h-screen pt-24 bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 px-4 flex flex-col items-center justify-start">
       <div className="text-center max-w-3xl space-y-6">
         {/* Name */}
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">
+        <h1 className="text-4xl sm:text-5xl text-gray-900 dark:text-white">
           Ayush Singh Kaushik
         </h1>
 

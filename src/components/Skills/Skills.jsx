@@ -23,6 +23,7 @@ import {
   SiPostman,
   SiReplit,
   SiVite,
+  SiRedux
 } from 'react-icons/si';
 
 import { motion as Motion } from 'framer-motion';
@@ -41,6 +42,8 @@ const programmingStack = [
   { name: 'MongoDB', icon: <SiMongodb className="text-green-700 w-8 h-8" /> },
   { name: 'MySQL', icon: <SiMysql className="text-blue-500 w-8 h-8" /> },
   { name: 'Vite', icon: <SiVite className="text-purple-500 w-8 h-8" /> },
+  { name: 'Redux', icon: <SiRedux className="text-purple-600 w-8 h-8" /> },
+
 ];
 
 const toolsAndTechnologies = [
@@ -64,7 +67,7 @@ export default function Skills() {
     >
       <div className="min-h-screen py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">Technical Skills</h1>
+          <h1 className="text-4xl  text-gray-800 dark:text-white mb-4">Technical Skills</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
             A versatile developer with experience across frontend, backend, databases, and dev tools. Here's a snapshot of my stack:
           </p>
@@ -72,7 +75,7 @@ export default function Skills() {
           {/* Programming Stack */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <FaCode className="text-blue-600 text-2xl" />
-            <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">Programming Stack</h2>
+            <h2 className="text-2xl  text-gray-800 dark:text-white">Programming Stack</h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12">
             {programmingStack.map((item, index) => (
@@ -91,7 +94,7 @@ export default function Skills() {
           {/* Tools & Technologies */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <FaTools className="text-blue-600 text-2xl" />
-            <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">Tools & Technologies</h2>
+            <h2 className="text-2xl  text-gray-800 dark:text-white">Tools & Technologies</h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {toolsAndTechnologies.map((item, index) => (
