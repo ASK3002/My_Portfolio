@@ -76,5 +76,8 @@ export default Github;
 
 export const githubInfoLoader = async () => {
   const response = await fetch('https://api.github.com/users/ASK3002/repos');
-  return response.json();
+  const data = await response.json();
+  // Exclude forks
+  const nonForkedRepos = data.filter(repo => !repo.fork);
+  return nonForkedRepos;
 };
