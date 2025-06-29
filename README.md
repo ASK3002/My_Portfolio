@@ -35,7 +35,7 @@ Welcome to my personal developer portfolio! This project showcases my skills, pr
 
 | Home                                                                                   | Skills                                                                                   | Projects                                                                                   |
 | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| ![Home](https://drive.google.com/uc?export=view\&id=191hfZUxykPLo7H5ZNeZD0I0_BYdNTgSQ) | ![Skills](https://drive.google.com/uc?export=view\&id=191hfZUxykPLo7H5ZNeZD0I0_BYdNTgSQ) | ![Projects](https://drive.google.com/uc?export=view\&id=1NPzsIX2KpL-OQC0FG44i57H1fyWTUDLb) |
+| ![Home](https://drive.google.com/uc?export=view\&id=191hfZUxykPLo7H5ZNeZD0I0_BYdNTgSQ) | ![Skills](https://drive.google.com/file/d/1aJbf1StpVLMkFl9D1541JFik9KRVclJo/view?usp=drive_link) | ![Projects](https://drive.google.com/uc?export=view\&id=1NPzsIX2KpL-OQC0FG44i57H1fyWTUDLb) |
 
 ---
 
