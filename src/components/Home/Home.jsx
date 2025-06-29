@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion as Motion } from 'framer-motion';
+import Footer from '../Footer/Footer.jsx';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -44,6 +45,11 @@ export default function Home() {
         </div>
       </div>
     </div>
+    <div className="fixed bottom-0 left-0 w-full z-40">
+      <Footer />
+    </div>
+
     </Motion.div>
+    
   );
 }
