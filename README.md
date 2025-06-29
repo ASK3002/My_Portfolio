@@ -1,6 +1,6 @@
 # 💼 Ayush Singh Kaushik - Developer Portfolio
 
-![Portfolio Banner](https://drive.google.com/file/d/1EkkmlAMsytLCZmccxFQGs7EDWkmaLu1m/view?usp=drive_link)
+![Portfolio Banner](https://drive.google.com/drive/u/0/folders/1dtPD9ovjt4OAgBcyx8T9twma_sARKp3n)
 
 Welcome to my personal developer portfolio! This project showcases my skills, projects, and journey as a web developer — built using modern technologies and optimized for performance, accessibility, and mobile responsiveness.
 
@@ -35,7 +35,7 @@ Welcome to my personal developer portfolio! This project showcases my skills, pr
 
 | Home                                                                                   | Skills                                                                                   | Projects                                                                                   |
 | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| ![Home](https://drive.google.com/file/d/1EkkmlAMsytLCZmccxFQGs7EDWkmaLu1m/view?usp=drive_link) | ![Skills](https://drive.google.com/file/d/1aJbf1StpVLMkFl9D1541JFik9KRVclJo/view?usp=drive_link) | ![Projects](https://drive.google.com/uc?export=view\&id=1NPzsIX2KpL-OQC0FG44i57H1fyWTUDLb) |
+| ![Home](https://drive.google.com/drive/u/0/folders/1dtPD9ovjt4OAgBcyx8T9twma_sARKp3n) | ![Skills](https://drive.google.com/drive/u/0/folders/1dtPD9ovjt4OAgBcyx8T9twma_sARKp3n) | ![Projects](https://drive.google.com/uc?export=view\&id=1NPzsIX2KpL-OQC0FG44i57H1fyWTUDLb) |
 
 ---
 
