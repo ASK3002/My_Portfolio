@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { motion  as Motion} from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 function Github() {
   const repos = useLoaderData();
@@ -13,38 +14,44 @@ function Github() {
 
   return (
     <Motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="min-h-screen w-full bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
-        >
-    <div className="w-full min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 py-16 px-4">
-      <h1 className="text-4xl  mb-10 text-center text-amber-900 dark:text-orange-300">
-        My Projects
-      </h1>
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="min-h-screen w-full bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
+    >
+      <div className="py-16 px-4 max-w-7xl mx-auto">
+        <h1 className="text-4xl font-bold text-center text-amber-900 dark:text-orange-300 mb-12">
+          🚀 My Projects
+        </h1>
 
-      {repos && repos.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {repos.map((repo) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {repos.map((repo, index) => {
             const deployedLink = deployedLinks[repo.name];
 
             return (
-              <div
+              <Motion.div
                 key={repo.id}
-                className="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6 flex flex-col justify-between transition hover:shadow-xl"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white/60 dark:bg-gray-800/50 backdrop-blur-xl border border-orange-200 dark:border-gray-600 p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
               >
-                <h2 className="text-lg text-center  text-gray-900 dark:text-white mb-4">
+                <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-4 truncate text-center" title={repo.name}>
                   {repo.name}
                 </h2>
 
-                <div className="flex flex-col space-y-3 mt-auto">
+                <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3 text-center mb-6">
+                  {repo.description || 'No description available.'}
+                </p>
+
+                <div className="flex flex-col gap-3 mt-auto">
                   <a
                     href={repo.html_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition"
+                    className="flex items-center justify-center gap-2 bg-gray-900 text-white dark:bg-gray-100 dark:text-black px-4 py-2 rounded-md hover:bg-gray-800 dark:hover:bg-gray-200 transition"
                   >
-                    See GitHub Code
+                    <FaGithub /> GitHub
                   </a>
 
                   {deployedLink && (
@@ -52,22 +59,17 @@ function Github() {
                       href={deployedLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+                      className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition"
                     >
-                      See Deployed Project
+                      <FaExternalLinkAlt /> Live Demo
                     </a>
                   )}
                 </div>
-              </div>
+              </Motion.div>
             );
           })}
         </div>
-      ) : (
-        <p className="text-center text-gray-800 dark:text-gray-300">
-          No Repos Found...
-        </p>
-      )}
-    </div>
+      </div>
     </Motion.div>
   );
 }
@@ -77,7 +79,5 @@ export default Github;
 export const githubInfoLoader = async () => {
   const response = await fetch('https://api.github.com/users/ASK3002/repos');
   const data = await response.json();
-  // Exclude forks
-  const nonForkedRepos = data.filter(repo => !repo.fork);
-  return nonForkedRepos;
+  return data.filter(repo => !repo.fork); // exclude forks
 };
