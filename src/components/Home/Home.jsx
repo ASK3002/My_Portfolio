@@ -33,7 +33,7 @@ export default function Home() {
               href="https://medium.com/@ayushsinghkaushik111"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-orange-700 shadow-lg text-white rounded-lg font-semibold hover:bg-orange-600 transition"
+              className="px-6 py-3 bg-orange-700 shadow-lg text-white rounded-lg font-semibold  dark:bg-blue-400/50 hover:bg-orange-600 transition"
             >
               📜 Read My Articles
             </a>
@@ -47,9 +47,9 @@ export default function Home() {
 
           {/* Resume Section */}
           <div className="mt-8 flex items-center justify-center gap-4">
-            <span className="text-lg bg-amber-600/50 font-semibold text-gray-800 dark:text-gray-200 p-2 rounded-xl">
-              📄 My Resume
-            </span>
+            <span className="text-lg border-2 border-blue-700 font-semibold text-gray-800 dark:border-blue-400 dark:text-white px-6 py-3 rounded-xl">
+            📄 My Resume
+          </span>
 
             {/* View Button */}
             <a
