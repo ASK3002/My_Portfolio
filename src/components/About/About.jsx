@@ -18,7 +18,7 @@ export default function About() {
             👋 About Me
           </h2>
           <p className="text-gray-800 dark:text-gray-100 text-lg leading-relaxed mb-4">
-            I'm a second-year B.Tech Computer Science student at IIITDM Jabalpur with a strong academic record (CPI: 9.5).
+            I'm a second-year B.Tech Computer Science student at IIITDM Jabalpur with a strong academic record (CPI: 8.7).
             I enjoy building web projects using HTML, CSS, JavaScript, and React, and I'm currently learning backend development with Node.js and MongoDB.
             Next on my roadmap is diving into Next.js to enhance my full-stack skills.
           </p>
