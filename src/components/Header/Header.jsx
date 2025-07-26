@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import DsaHome from '../dsa/pages/DsaHome';
 import {
   FaLinkedin,
   FaGithub,
@@ -10,6 +11,7 @@ import {
   FaUser,
   FaBars,
   FaTimes,
+  FaDraftingCompass
 } from 'react-icons/fa';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
@@ -20,6 +22,7 @@ export default function Header() {
     { path: '/', label: 'Home', icon: FaHome },
     { path: '/Skills', label: 'Skills', icon: FaCogs },
     { path: '/Github', label: 'Projects', icon: FaProjectDiagram },
+    { path: '/DsaHome', label: 'DSA', icon: FaDraftingCompass },
     { path: '/about', label: 'About', icon: FaUser },
   ];
 

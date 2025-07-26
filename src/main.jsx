@@ -16,6 +16,10 @@ import Skills from './components/Skills/Skills';
 import Layout from './Layout';
 import Github, { githubInfoLoader } from './components/Projects/Projects';
 import Projects from './components/Projects/Projects'; 
+import DsaHome from './components/dsa/pages/DsaHome';
+import LeetCode from './components/dsa/pages/LeetCode';
+import GFG from './components/dsa/pages/GFG';
+import CodeChef from './components/dsa/pages/CodeChef';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +34,12 @@ const router = createBrowserRouter(
         loader={githubInfoLoader}
         element={<Github />}
       />
+      <Route path='DsaHome' element={<DsaHome />} />
+
+      <Route path="/leetcode" element={<LeetCode />} />
+      <Route path="/gfg" element={<GFG />} />
+      <Route path="/codechef" element={<CodeChef />} />
+
     </Route>
   )
 );
