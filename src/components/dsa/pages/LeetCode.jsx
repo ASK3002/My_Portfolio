@@ -21,7 +21,7 @@ const LeetCode = () => {
 
         {/* Title and Profile Link */}
         <div className="text-center space-y-2">
-          <h1 className="text-4xl font-bold">🧠 LeetCode</h1>
+          <h1 className="text-4xl font-bold">💡 LeetCode</h1>
           <a
             href="https://leetcode.com/u/A_S_K_Ayush/"
             target="_blank"
