@@ -35,7 +35,7 @@ Welcome to my personal developer portfolio! This project showcases my skills, pr
 
 | Home                                                                                   | Skills                                                                                   | Projects                                                                                   |
 | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| ![Home](./src/assets/Home.png) | ![Skills](./src/assets//Skills.png) | ![Projects](./src/assets/Project.png) |
+| ![Home](./src/assets/Home.png) | ![Skills](./src/assets//Skills.png) | ![Projects](./src/assets/Project.png) |![DsaHome](./src/assets/DsaHome.png) |![About](./src/assets/About.png) |
 
 ---
 

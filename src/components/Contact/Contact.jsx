@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {
@@ -6,88 +7,151 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
 
   const sendEmail = (e) => {
-  e.preventDefault();
-  setSent(true); // show message instantly
+    e.preventDefault();
+    setSent(true);
 
-  const serviceID = 'service_y24zs86';
-  const templateToYou = 'template_5a6jbi8';
-  const templateToUser = 'template_k4omii6';
-  const userID = 'mKkAQbu5ExfW6Qz-S';
+    const serviceID = 'service_y24zs86';
+    const templateToYou = 'template_5a6jbi8';
+    const templateToUser = 'template_k4omii6';
+    const userID = 'mKkAQbu5ExfW6Qz-S';
 
-  // Send to you
-  emailjs.sendForm(serviceID, templateToYou, form.current, userID)
-    .then(() => {
-      // Send auto-reply
-      return emailjs.sendForm(serviceID, templateToUser, form.current, userID);
-    })
-    .then(() => {
-      form.current.reset();
-    })
-    .catch((error) => {
-      console.error('Email error:', error);
-    })
-    .finally(() => {
-      // Hide "Message Sent" after 4s no matter what
-      setTimeout(() => setSent(false), 4000);
-    });
-};
-
+    emailjs.sendForm(serviceID, templateToYou, form.current, userID)
+      .then(() => emailjs.sendForm(serviceID, templateToUser, form.current, userID))
+      .then(() => form.current.reset())
+      .catch(console.error)
+      .finally(() => setTimeout(() => setSent(false), 4000));
+  };
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div className="py-12 sm:py-16 lg:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            {/* Info Panel */}
-            <div className="p-6 mr-2 ml-3 bg-yellow-200/50 dark:bg-blue-800/30 sm:rounded-lg">
-              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-black dark:text-white">Get in touch:</h1>
-              <p className="text-lg sm:text-xl font-medium text-black dark:text-gray-200 mt-2">Fill in the form to start a conversation</p>
-              <div className="flex items-center mt-8 text-black dark:text-gray-200">
-                <span className="text-2xl">📍</span>
-                <div className="ml-4 text-md tracking-wide font-semibold w-40">226010, Lucknow, India</div>
+    <>
+      {/* Load Google Fonts Montserrat + Inter */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet"
+      />
+
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="min-h-screen bg-gradient-to-br from-yellow-100 to-orange-200 dark:from-gray-900 dark:to-gray-800 py-16 px-6"
+        style={{ fontFamily: "'Inter', 'Montserrat', sans-serif" }}
+      >
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+          
+          {/* Info Panel */}
+          <div className="bg-gradient-to-tr from-orange-400 to-yellow-300 dark:from-orange-700 dark:to-yellow-600 p-10 rounded-3xl shadow-xl text-white flex flex-col justify-center space-y-8">
+            <h1
+              className="text-4xl font-bold tracking-tight leading-tight drop-shadow-lg"
+              style={{ fontFamily: "'Montserrat', sans-serif", letterSpacing: '-0.03em' }}
+            >
+              Get in Touch
+            </h1>
+            <p className="text-lg font-light tracking-wide drop-shadow-md leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
+              Have a question or want to collaborate? Fill out the form and I'll get back to you asap!
+            </p>
+            <div className="space-y-6 text-xl font-semibold tracking-wide">
+              <div className="flex items-center gap-4">
+                <span className="text-xl">📍</span>
+                <span>226010, Lucknow, India</span>
               </div>
-              <div className="flex items-center mt-4 text-black dark:text-gray-200">
-                <span className="text-2xl">📞</span>
-                <div className="ml-4 text-md tracking-wide font-semibold w-40">+91 9532038112</div>
+              <div className="flex items-center gap-4">
+                <span className="text-xl">📞</span>
+                <span>+91 9532038112</span>
               </div>
-              <div className="flex items-center mt-2 text-black dark:text-gray-200">
-                <span className="text-2xl">📧</span>
-                <div className="ml-4 text-md tracking-wide font-semibold w-40">ayushisnghkasuhik111@gmail.com</div>
+              <div className="flex items-center gap-4">
+                <span className="text-xl">📧</span>
+                <span>ayushisnghkasuhik111@gmail.com</span>
               </div>
             </div>
-
-            {/* Form */}
-            <form ref={form} onSubmit={sendEmail} className="p-6 flex flex-col justify-center">
-              <input name="name" placeholder="Full Name" required
-                className="w-full mt-2 py-3 px-3 rounded-lg bg-yellow-200/50 dark:bg-blue-800/30 border border-gray-400 text-black dark:text-white font-semibold focus:border-orange-500 focus:outline-none"
-              />
-              <input name="email" type="email" placeholder="Email" required
-                className="w-full mt-2 py-3 px-3 rounded-lg bg-yellow-200/50 dark:bg-blue-800/30 border border-gray-400 text-black dark:text-white font-semibold focus:border-orange-500 focus:outline-none"
-              />
-              <input name="phone" placeholder="Telephone Number"
-                className="w-full mt-2 py-3 px-3 rounded-lg bg-yellow-200/50 dark:bg-blue-800/30 border border-gray-400 text-black dark:text-white font-semibold focus:border-orange-500 focus:outline-none"
-              />
-              <textarea name="message" rows="4" placeholder="Your Message"
-                className="w-full mt-2 py-3 px-3 rounded-lg bg-yellow-200/50 dark:bg-blue-800/30 border border-gray-400 text-black dark:text-white font-semibold focus:border-orange-500 focus:outline-none"
-              ></textarea>
-
-              <button
-                type="submit"
-                className="md:w-32 bg-orange-700 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg mt-4 transition"
-              >
-                Submit
-              </button>
-
-              {sent && (
-                <h1 className="text-center text-green-700 font-semibold mt-4 text-xl">
-                  ✅ Message Sent!
-                </h1>
-              )}
-            </form>
           </div>
+
+          {/* Form Panel */}
+          <motion.form
+            ref={form}
+            onSubmit={sendEmail}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl p-10 flex flex-col space-y-6"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            <input
+              name="name"
+              placeholder="Full Name"
+              required
+              className="input-field"
+              style={{ fontWeight: 600, letterSpacing: '0.02em' }}
+            />
+            <input
+              name="email"
+              type="email"
+              placeholder="Email"
+              required
+              className="input-field"
+              style={{ fontWeight: 600, letterSpacing: '0.02em' }}
+            />
+            <input
+              name="phone"
+              placeholder="Telephone Number"
+              className="input-field"
+              style={{ fontWeight: 600, letterSpacing: '0.02em' }}
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              className="input-field resize-none"
+              style={{ fontWeight: 600, letterSpacing: '0.02em' }}
+            ></textarea>
+
+            <button
+              type="submit"
+              className="bg-gradient-to-r from-orange-500 to-yellow-400 hover:from-yellow-400 hover:to-orange-500 text-white font-semibold py-3 rounded-full shadow-lg transform transition duration-300 hover:scale-105 tracking-wide"
+            >
+              Send Message
+            </button>
+
+            {sent && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="text-center text-green-600 font-semibold mt-4 select-none tracking-wide"
+              >
+                ✅ Message Sent!
+              </motion.p>
+            )}
+          </motion.form>
         </div>
-      </div>
-    </div>
+
+        <style>{`
+          .input-field {
+            background-color: #FEF3C7; /* yellow-200 */
+            border: 2px solid transparent;
+            padding: 14px 16px;
+            border-radius: 16px;
+            color: #1F2937; /* gray-800 */
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+            outline-offset: 2px;
+            font-size: 1rem;
+          }
+          .input-field:focus {
+            border-color: #F97316; /* orange-500 */
+            background-color: #FFFBEB; /* yellow-50 */
+            outline: none;
+          }
+          @media (prefers-color-scheme: dark) {
+            .input-field {
+              background-color: #1E293B; /* gray-800 */
+              color: #F3F4F6; /* gray-100 */
+            }
+            .input-field:focus {
+              background-color: #334155; /* gray-700 */
+            }
+          }
+        `}</style>
+      </motion.div>
+    </>
   );
 }

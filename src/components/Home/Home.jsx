@@ -1,84 +1,108 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { motion as Motion } from 'framer-motion';
-import Footer from '../Footer/Footer.jsx';
-import { FiEye, FiDownload } from 'react-icons/fi';
+import { motion } from 'framer-motion';
+import { FiDownload, FiEye } from 'react-icons/fi';
+import Footer from '../Footer/Footer';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
-  const navigate = useNavigate();
-
   return (
-    <Motion.div
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="min-h-screen w-full bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
-    >
-      <div className="w-full min-h-screen pt-24 px-4 flex flex-col items-center justify-start">
-        <div className="text-center max-w-3xl space-y-6">
-          {/* Name */}
-          <h1 className="text-4xl sm:text-5xl text-gray-900 dark:text-white">
-            Ayush Singh Kaushik
+    <>
+      {/* Google Fonts - ideally only once in your app */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet"
+      />
+
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="min-h-screen w-full bg-gradient-to-tr from-orange-50 to-yellow-100 dark:from-gray-950 dark:to-gray-900 px-6 pt-24 pb-12 flex flex-col items-center justify-between"
+        style={{ fontFamily: "'Inter', sans-serif" }}
+      >
+        <div className="max-w-5xl w-full text-center space-y-8">
+          {/* Heading */}
+          <h1
+            className="text-5xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            Hello, I’m{' '}
+            <span className="text-orange-600 dark:text-orange-400">Ayush Singh Kaushik</span>
           </h1>
 
-          {/* Intro */}
-          <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-            A passionate full-stack developer currently exploring backend technologies.<br />
-            Consistently building, learning, and sharing through projects and writing.
+          {/* Subtext */}
+          <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300" style={{ fontFamily: "'Inter', sans-serif" }}>
+            Full-stack Developer | Problem Solver | Tech Explorer
           </p>
 
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+          {/* Gradient Divider */}
+          <div className="h-1 w-32 mx-auto bg-gradient-to-r from-orange-500 to-yellow-400 dark:from-orange-400 dark:to-yellow-300 rounded-full" />
+
+          {/* Description */}
+          <p
+            className="text-md sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            I design and develop sleek, performant websites. Currently diving deep into dsa, building strong projects, and sharing knowledge through writing.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
             <a
               href="https://medium.com/@ayushsinghkaushik111"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-orange-700 shadow-lg text-white rounded-lg font-semibold  dark:bg-blue-400/50 hover:bg-orange-600 transition"
+              className="px-6 py-3 text-white bg-orange-600 hover:bg-orange-700 dark:bg-orange-500 dark:hover:bg-orange-400 rounded-lg shadow-lg transition text-md font-medium"
+              style={{ fontFamily: "'Inter', sans-serif" }}
             >
               📜 Read My Articles
             </a>
-            <button
-              onClick={() => navigate('/contact')}
-              className="px-6 py-3 bg-transparent border-2 border-orange-700 text-orange-700 dark:text-orange-400 dark:border-orange-400 rounded-lg font-semibold hover:bg-orange-100 dark:hover:bg-gray-800 transition"
+
+            <Link
+              to="/contact"
+              className="px-6 py-3 border-2 border-orange-600 text-orange-700 dark:border-orange-400 dark:text-orange-400 rounded-lg hover:bg-orange-100 dark:hover:bg-gray-800 transition text-md font-medium"
+              style={{ fontFamily: "'Inter', sans-serif" }}
             >
               📞 Contact Me
-            </button>
+            </Link>
           </div>
 
-          {/* Resume Section */}
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <span className="text-lg border-2 border-blue-700 font-semibold text-gray-800 dark:border-blue-400 dark:text-white px-6 py-3 rounded-xl">
-            📄 My Resume
-          </span>
+          {/* Resume Buttons */}
+          <div className="mt-12 flex items-center justify-center gap-5">
+            <span
+              className="text-md font-semibold px-5 py-2.5 bg-white/40 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-600 rounded-xl text-gray-800 dark:text-gray-200"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              📄 My Resume
+            </span>
 
-            {/* View Button */}
             <a
               href="https://drive.google.com/file/d/1Jefr0Ne8OLpvzUiqUCs-UEwz8fDdKBqG/view?usp=sharing"
               target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition"
+              className="p-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition"
               title="View Resume"
+              style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              <FiEye className="w-5 h-5" />
+              <FiEye size={20} />
             </a>
 
-            {/* Download Button */}
             <a
               href="https://drive.google.com/uc?export=download&id=1Jefr0Ne8OLpvzUiqUCs-UEwz8fDdKBqG"
               download
-              className="p-3 bg-green-600 hover:bg-green-700 text-white rounded-full transition"
+              className="p-3 rounded-full bg-green-600 hover:bg-green-700 text-white transition"
               title="Download Resume"
+              style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              <FiDownload className="w-5 h-5" />
+              <FiDownload size={20} />
             </a>
-
           </div>
         </div>
-      </div>
 
-      <div className="fixed bottom-0 left-0 w-full z-40">
-        <Footer />
-      </div>
-    </Motion.div>
+        {/* Footer */}
+        <div className="w-full mt-20">
+          <Footer />
+        </div>
+      </motion.section>
+    </>
   );
 }
