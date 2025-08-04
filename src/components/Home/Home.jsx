@@ -53,7 +53,7 @@ export default function Home() {
 
             {/* View Button */}
             <a
-              href="https://drive.google.com/file/d/1a6qU0VBoPqM-50QjaKeaOg0p-R_MIlow/view?usp=sharing"
+              href="https://drive.google.com/file/d/1Jefr0Ne8OLpvzUiqUCs-UEwz8fDdKBqG/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition"
@@ -64,13 +64,14 @@ export default function Home() {
 
             {/* Download Button */}
             <a
-              href="https://drive.google.com/uc?export=download&id=1a6qU0VBoPqM-50QjaKeaOg0p-R_MIlow"
+              href="https://drive.google.com/uc?export=download&id=1Jefr0Ne8OLpvzUiqUCs-UEwz8fDdKBqG"
               download
               className="p-3 bg-green-600 hover:bg-green-700 text-white rounded-full transition"
               title="Download Resume"
             >
               <FiDownload className="w-5 h-5" />
             </a>
+
           </div>
         </div>
       </div>
