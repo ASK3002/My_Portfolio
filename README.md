@@ -33,11 +33,12 @@ Welcome to my personal developer portfolio! This project showcases my skills, pr
 
 ## 📸 Screenshots
 
-| Home                                                                                   | Skills                                                                                   | Projects                                                                                   |
-| -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| ![Home](./src/assets/Home.png) | ![Skills](./src/assets//Skills.png) | ![Projects](./src/assets/Project.png) |![DsaHome](./src/assets/DsaHome.png) |![About](./src/assets/About.png) |
+| Home                             | Skills                           | Projects                         | DsaHome                         | About                           |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| ![Home](./src/assets/Home.png)   | ![Skills](./src/assets/Skills.png) | ![Projects](./src/assets/Project.png) | ![DsaHome](./src/assets/DsaHome.png) | ![About](./src/assets/About.png) |
 
 ---
+
 
 ## 🛠️ Getting Started
 
