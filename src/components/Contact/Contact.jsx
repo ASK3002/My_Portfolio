@@ -59,10 +59,11 @@ export default function Contact() {
                 <span className="text-xl">📞</span>
                 <span>+91 9532038112</span>
               </div>
-              <div className="flex items-center gap-4">
-                <span className="text-xl">📧</span>
-                <span>ayushisnghkasuhik111@gmail.com</span>
-              </div>
+              <div className="flex items-start gap-4 break-words flex-wrap">
+  <span className="text-xl mt-[2px]">📧</span>
+  <span className="break-all">ayushisnghkasuhik111@gmail.com</span>
+</div>
+
             </div>
           </div>
 

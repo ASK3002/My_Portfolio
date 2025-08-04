@@ -40,11 +40,12 @@ function Github() {
         )}
 
         <h2
-          className="text-2xl font-semibold text-gray-800 dark:text-white mb-2"
-          style={{ fontFamily: "'Montserrat', sans-serif" }}
-        >
-          {repo.name}
-        </h2>
+  className="text-2xl font-semibold text-gray-800 dark:text-white mb-2 break-words max-w-full"
+  style={{ fontFamily: "'Montserrat', sans-serif', wordBreak: 'break-word'" }}
+>
+  {repo.name}
+</h2>
+
 
         {repo.description ? (
           <ul
