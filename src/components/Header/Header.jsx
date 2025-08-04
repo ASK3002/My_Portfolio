@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import DsaHome from '../dsa/pages/DsaHome';
 import {
   FaLinkedin,
   FaGithub,
@@ -26,24 +25,26 @@ export default function Header() {
     { path: '/about', label: 'About', icon: FaUser },
   ];
 
+  const fontStyle = { fontFamily: "'Inter', 'Montserrat', sans-serif" };
+
   return (
-    <header className="sticky z-50 top-0 bg-white dark:bg-gray-900 ">
+    <header className="sticky z-50 top-0 bg-white dark:bg-gray-900" style={fontStyle}>
       <nav className="border-gray-200 px-4 lg:px-6 py-2.5">
         <div className="flex items-center justify-between w-full">
           {/* Logo + Name */}
-          <div className="flex items-center space-x-3 pl-2">
+          <div className="flex items-center space-x-3 pl-2" style={fontStyle}>
             <img
               src="https://static.vecteezy.com/system/resources/previews/020/617/232/non_2x/ask-letter-logo-design-in-illustration-logo-calligraphy-designs-for-logo-poster-invitation-etc-vector.jpg"
               className="h-16 w-16 rounded-full object-cover"
               alt="Logo"
             />
-            <span className="text-xl font-semibold whitespace-nowrap text-gray-800 dark:text-white">
+            <span className="text-xl font-semibold whitespace-nowrap text-gray-800 dark:text-white" style={fontStyle}>
               Ayush Singh Kaushik
             </span>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex space-x-6">
+          <div className="hidden lg:flex space-x-6" style={fontStyle}>
             {navLinks.map((nav) => (
               <NavLink
                 key={nav.path}
@@ -55,6 +56,7 @@ export default function Header() {
                       : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
                   }`
                 }
+                style={fontStyle}
               >
                 <nav.icon />
               </NavLink>
@@ -62,7 +64,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Socials + Toggle */}
-          <div className="hidden lg:flex items-center space-x-4 pr-2">
+          <div className="hidden lg:flex items-center space-x-4 pr-2" style={fontStyle}>
             <a
               href="https://www.linkedin.com/in/ayush-singh-kaushik-7386a4294/"
               target="_blank"
@@ -91,6 +93,7 @@ export default function Header() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden text-gray-700 dark:text-gray-300"
+            style={fontStyle}
           >
             {isOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
           </button>
@@ -98,7 +101,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden mt-4 space-y-3">
+          <div className="lg:hidden mt-4 space-y-3" style={fontStyle}>
             {/* Links */}
             <div className="flex flex-col items-center space-y-4">
               {navLinks.map((nav) => (
@@ -113,6 +116,7 @@ export default function Header() {
                         : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
                     }`
                   }
+                  style={fontStyle}
                 >
                   <nav.icon />
                   <span>{nav.label}</span>
@@ -126,6 +130,7 @@ export default function Header() {
                 href="https://www.linkedin.com/in/ayush-singh-kaushik-7386a4294/"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={fontStyle}
               >
                 <FaLinkedin className="w-5 h-5" />
               </a>
@@ -133,6 +138,7 @@ export default function Header() {
                 href="https://github.com/ASK3002"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={fontStyle}
               >
                 <FaGithub className="w-5 h-5" />
               </a>
@@ -140,6 +146,7 @@ export default function Header() {
                 href="https://medium.com/@ayushsinghkaushik111"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={fontStyle}
               >
                 <FaMedium className="w-5 h-5" />
               </a>
