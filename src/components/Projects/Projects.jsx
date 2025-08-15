@@ -10,7 +10,7 @@ const deployedLinks = {
   "RECO-Resume-CoverLetterBuilder":"https://reco-resume-cover-letter-builder.vercel.app/"
 };
 
-const mainProjects = ["My_Portfolio", "SpendSense", "VideoPlatform_BackendProject"];
+const mainProjects = ["RECO-Resume-CoverLetterBuilder","SpendSense","My_Portfolio"];
 
 function Github() {
   const repos = useLoaderData();
