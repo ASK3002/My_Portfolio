@@ -7,7 +7,7 @@ const deployedLinks = {
   "Basic_React_Projects": "https://ask3002.github.io/Basic_React_Projects/",
   "BASIC_PROJECTS_HTML_CSS_JS": "https://ask3002.github.io/BASIC_PROJECTS_HTML_CSS_JS/",
   "My_Portfolio": "https://ayushsinghkaushik-portfolio.netlify.app/",
-  "dsa-portfolio": "https://dsa-portfolio-ask.netlify.app",
+  "RECO-Resume-CoverLetterBuilder":"https://reco-resume-cover-letter-builder.vercel.app/"
 };
 
 const mainProjects = ["My_Portfolio", "SpendSense", "VideoPlatform_BackendProject"];
