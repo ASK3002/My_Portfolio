@@ -10,7 +10,7 @@ export default function Contact() {
     e.preventDefault();
     setSent(true);
 
-    const serviceID = 'service_y24zs86';
+    const serviceID = 'service_zo7azk3';   // ✅ new SMTP service ID
     const templateToYou = 'template_5a6jbi8';
     const templateToUser = 'template_k4omii6';
     const userID = 'mKkAQbu5ExfW6Qz-S';
