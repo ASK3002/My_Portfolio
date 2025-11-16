@@ -1,120 +1,96 @@
-import { Link } from "react-router-dom";
-import { motion as Motion } from 'framer-motion';
+import React from "react";
 import {
-  FaCubes, FaSearch, FaProjectDiagram,
-  FaRetweet, FaNetworkWired, FaCalculator,
-  FaLightbulb, FaTree
+  SiLeetcode,
+  SiCodeforces,
+  SiCodechef,
+  SiGeeksforgeeks,
+} from "react-icons/si";
+import {
+  FaCubes,
+  FaSearch,
+  FaProjectDiagram,
+  FaRetweet,
+  FaNetworkWired,
+  FaCalculator,
+  FaLightbulb,
+  FaTree,
 } from "react-icons/fa";
 
-const patterns = [
-  { icon: <FaCubes />, name: "Sliding Window & Two Pointers", bg: "from-purple-400 to-purple-600" },
-  { icon: <FaSearch />, name: "Binary Search & Bit Manipulation", bg: "from-pink-400 to-pink-600" },
-  { icon: <FaRetweet />, name: "Backtracking & Recursion", bg: "from-yellow-400 to-yellow-600" },
-  { icon: <FaProjectDiagram />, name: "Dynamic Programming", bg: "from-green-400 to-green-600" },
-  { icon: <FaNetworkWired />, name: "Graphs (BFS/DFS/Union Find)", bg: "from-blue-400 to-blue-600" },
-  { icon: <FaCalculator />, name: "Stacks, Queues & Heaps", bg: "from-red-400 to-red-600" },
-  { icon: <FaLightbulb />, name: "Hashing, Prefix Sum, Greedy", bg: "from-teal-400 to-teal-600" },
-  { icon: <FaTree />, name: "Trees, Binary Trees, Tries", bg: "from-indigo-400 to-indigo-600" },
+export default function DsaHome() {
+  const platforms = [
+    {
+      icon: <SiLeetcode className="text-4xl" />,
+      name: "LeetCode",
+      link: "https://leetcode.com/u/A_S_K_Ayush/",
+    },
+    {
+      icon: <SiCodeforces className="text-4xl" />,
+      name: "CodeForces",
+      link: "https://codeforces.com/profile/a_s_k_ayush",
+    },
+    {
+      icon: <SiGeeksforgeeks className="text-4xl" />,
+      name: "GFG",
+      link: "https://www.geeksforgeeks.org/user/askayush/",
+    },
+    {
+      icon: <SiCodechef className="text-4xl" />,
+      name: "CodeChef",
+      link: "https://www.codechef.com/users/a_s_k_ayush",
+    },
+  ];
+
+  const patterns = [
+  { icon: <FaCubes />, name: "Sliding Window & Two Pointers", bg: "from-purple-500/80 to-purple-700/90" },
+  { icon: <FaSearch />, name: "Binary Search & Bit Manipulation", bg: "from-pink-500/80 to-pink-700/90" },
+  { icon: <FaRetweet />, name: "Backtracking & Recursion", bg: "from-yellow-500/80 to-yellow-700/90" },
+  { icon: <FaProjectDiagram />, name: "Dynamic Programming", bg: "from-green-500/80 to-green-700/90" },
+  { icon: <FaNetworkWired />, name: "Graphs (BFS/DFS/Union Find)", bg: "from-blue-500/80 to-blue-700/90" },
+  { icon: <FaCalculator />, name: "Stacks, Queues & Heaps", bg: "from-red-500/80 to-red-700/90" },
+  { icon: <FaLightbulb />, name: "Hashing, Prefix Sum, Greedy", bg: "from-teal-500/80 to-teal-700/90" },
+  { icon: <FaTree />, name: "Trees & Binary Trees", bg: "from-indigo-500/80 to-indigo-700/90" },
+  { icon: <FaTree />, name: "Trie", bg: "from-indigo-400/80 to-indigo-700/80" },
+  { icon: <FaProjectDiagram />, name: "Linked List", bg: "from-emerald-400/80 to-emerald-700/90" }
 ];
 
-const platformButtons = [
-  { name: "LeetCode", bg: "from-blue-500 to-gray-900" },
-  { name: "GFG", bg: "from-green-600 to-green-900" },
-  { name: "CodeChef", bg: "from-yellow-600 to-yellow-900" },
-];
+  return (
+    <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 to-yellow-100 dark:from-gray-900 dark:to-gray-800px-6 md:px-16 py-16 bg-white dark:bg-black text-black dark:text-white select-none transition-colors duration-300">
+      <h1 className="text-4xl md:text-4xl font-bold mb-12 letterSpacing: '4px'  text-center " style={{ fontFamily: "'Montserrat', sans-serif" }}>DSA Dashboard</h1>
 
-const DsaHome = () => (
-  <>
-    {/* Google Fonts Link - put once globally in your app for best performance */}
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap"
-      rel="stylesheet"
-    />
+      {/* Platforms */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-6"style={{ fontFamily: "'Montserrat', sans-serif" }}>Platforms</h2>
 
-    <Motion.div
-      initial={{ opacity: 0, y: 80 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="min-h-screen w-full bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300 py-20 px-6"
-      style={{ fontFamily: "'Inter', sans-serif" }}
-    >
-      <div className="max-w-5xl mx-auto flex flex-col gap-12 text-gray-900 dark:text-white">
-        {/* Name & Institute */}
-        <div className="text-center space-y-3">
-          <h1
-            className="text-4xl font-extrabold tracking-tight"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            Ayush Singh Kaushik
-          </h1>
-          <p
-            className="text-lg text-gray-700 dark:text-gray-300 font-medium"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-          >
-            B.Tech CSE, IIITDM Jabalpur
-          </p>
-        </div>
-
-        {/* Platform Buttons */}
-        <div className="grid gap-6 md:grid-cols-3 max-w-md mx-auto">
-          {platformButtons.map(({ name, bg }) => (
-            <Motion.div
-              key={name}
-              whileHover={{ scale: 1.07 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className={`p-6 rounded-xl shadow-lg text-white text-center text-lg font-semibold bg-gradient-to-br ${bg} cursor-pointer relative overflow-hidden`}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {platforms.map((p, idx) => (
+            <a
+              key={idx}
+              href={p.link}
+              className="group flex flex-col items-center justify-center p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-zinc-500 transition-all shadow-sm hover:shadow-md"
             >
-              <Link
-                to={`/${name.toLowerCase()}`}
-                className="relative z-10 block"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
-                {name}
-              </Link>
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-            </Motion.div>
+              {p.icon}
+              <p className="mt-3 text-lg font-medium">{p.name}</p>
+            </a>
           ))}
         </div>
+      </section>
 
-        {/* DSA Practice Section */}
-        <div
-          className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl space-y-8"
-          style={{ fontFamily: "'Inter', sans-serif" }}
-        >
-          <h2
-            className="text-3xl font-extrabold tracking-wide text-orange-600 dark:text-orange-400"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            📚 About My DSA Practice
-          </h2>
-          <p className="text-md leading-relaxed text-gray-800 dark:text-gray-300 max-w-xl mx-auto font-light text-center">
-            I have been consistently practicing data structures and algorithms across multiple platforms.
-            My focus has been on understanding core DSA patterns that are crucial for coding interviews and competitive programming.
-          </p>
+      {/* Patterns */}
+      <section className="mt-16">
+        <h2 className="text-2xl font-semibold mb-6" style={{ fontFamily: "'Montserrat', sans-serif" }}>Patterns I've Practiced</h2>
 
-          <h3 className="text-xl font-semibold" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-            ✅ Patterns I've Practiced:
-          </h3>
-
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-            {patterns.map((p, index) => (
-              <Motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * index }}
-                className={`flex items-center gap-4 p-5 rounded-lg bg-gradient-to-r ${p.bg} text-white shadow-lg cursor-default select-none transform hover:scale-[1.04] transition-transform duration-300`}
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
-                <div className="text-3xl">{p.icon}</div>
-                <div className="text-md font-semibold tracking-wide">{p.name}</div>
-              </Motion.div>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {patterns.map((pt, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center justify-center p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-zinc-500 transition-all shadow-sm hover:shadow-md"
+            >
+              {pt.icon}
+              <p className="mt-3 text-lg font-medium">{pt.name}</p>
+            </div>
+          ))}
         </div>
-      </div>
-    </Motion.div>
-  </>
-);
-
-export default DsaHome;
+      </section>
+    </div>
+  );
+}

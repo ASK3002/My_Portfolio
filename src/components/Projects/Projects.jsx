@@ -15,6 +15,7 @@ const mainProjects = ["RECO-Resume-CoverLetterBuilder","SpendSense","My_Portfoli
 
 function Github() {
   const repos = useLoaderData();
+  console.log("DATA RECEIVED BY COMPONENT:", repos);
 
   const mainRepos = repos.filter(repo => mainProjects.includes(repo.name));
   const otherRepos = repos.filter(repo => !mainProjects.includes(repo.name));
@@ -142,8 +143,40 @@ function Github() {
 
 export default Github;
 
+
 export const githubInfoLoader = async () => {
-  const res = await fetch('https://api.github.com/users/ASK3002/repos');
-  const data = await res.json();
-  return data.filter(repo => !repo.fork);
+  const cached = localStorage.getItem("reposCache");
+  const cachedTime = localStorage.getItem("reposCacheTime");
+
+  // 1. Check for valid cache
+  if (cached && Date.now() - cachedTime < 24 * 60 * 60 * 1000) {
+    return JSON.parse(cached);
+  }
+
+  // 2. Fetch data
+  const res = await fetch("https://api.github.com/users/ASK3002/repos");
+
+  // 3. Check if the fetch was successful
+  if (!res.ok) {
+    // If fetch failed (e.g., rate limit), log error and return an empty array
+    // Importantly, DO NOT cache this failure.
+    console.error("Failed to fetch GitHub repos:", res.status);
+    return []; 
+  }
+
+  let data = await res.json();
+
+  // 4. Check if data is an array
+  if (!Array.isArray(data)) {
+    console.error("Received unexpected data from GitHub API");
+    return [];
+  }
+
+  // 5. Filter and cache ONLY on success
+  const filtered = data.filter(r => !r.fork);
+
+  localStorage.setItem("reposCache", JSON.stringify(filtered));
+  localStorage.setItem("reposCacheTime", Date.now());
+
+  return filtered;
 };
