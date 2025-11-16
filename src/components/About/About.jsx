@@ -38,7 +38,7 @@ const About = () => {
 
         {/* Changed to a regular h1 (no animation) */}
         <h1
-          className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4"
+          className="text-4xl font-extrabold text-gray-900 dark:text-white mb-7"
           style={{ fontFamily: "'Montserrat', sans-serif" }}
         >
           About Me
