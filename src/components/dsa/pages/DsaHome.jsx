@@ -1,4 +1,5 @@
 import React from "react";
+import { motion as Motion } from 'framer-motion';
 import {
   SiLeetcode,
   SiCodeforces,
@@ -41,26 +42,29 @@ export default function DsaHome() {
   ];
 
   const patterns = [
-  { icon: <FaCubes />, name: "Sliding Window & Two Pointers", bg: "from-purple-500/80 to-purple-700/90" },
-  { icon: <FaSearch />, name: "Binary Search & Bit Manipulation", bg: "from-pink-500/80 to-pink-700/90" },
-  { icon: <FaRetweet />, name: "Backtracking & Recursion", bg: "from-yellow-500/80 to-yellow-700/90" },
-  { icon: <FaProjectDiagram />, name: "Dynamic Programming", bg: "from-green-500/80 to-green-700/90" },
-  { icon: <FaNetworkWired />, name: "Graphs (BFS/DFS/Union Find)", bg: "from-blue-500/80 to-blue-700/90" },
-  { icon: <FaCalculator />, name: "Stacks, Queues & Heaps", bg: "from-red-500/80 to-red-700/90" },
-  { icon: <FaLightbulb />, name: "Hashing, Prefix Sum, Greedy", bg: "from-teal-500/80 to-teal-700/90" },
-  { icon: <FaTree />, name: "Trees & Binary Trees", bg: "from-indigo-500/80 to-indigo-700/90" },
-  { icon: <FaTree />, name: "Trie", bg: "from-indigo-400/80 to-indigo-700/80" },
-  { icon: <FaProjectDiagram />, name: "Linked List", bg: "from-emerald-400/80 to-emerald-700/90" }
-];
+    { icon: <FaCubes />, name: "Sliding Window & Two Pointers", bg: "from-purple-500/80 to-purple-700/90" },
+    { icon: <FaSearch />, name: "Binary Search & Bit Manipulation", bg: "from-pink-500/80 to-pink-700/90" },
+    { icon: <FaRetweet />, name: "Backtracking & Recursion", bg: "from-yellow-500/80 to-yellow-700/90" },
+    { icon: <FaProjectDiagram />, name: "Dynamic Programming", bg: "from-green-500/80 to-green-700/90" },
+    { icon: <FaNetworkWired />, name: "Graphs (BFS/DFS/Union Find)", bg: "from-blue-500/80 to-blue-700/90" },
+    { icon: <FaCalculator />, name: "Stacks, Queues & Heaps", bg: "from-red-500/80 to-red-700/90" },
+    { icon: <FaLightbulb />, name: "Hashing, Prefix Sum, Greedy", bg: "from-teal-500/80 to-teal-700/90" },
+    { icon: <FaTree />, name: "Trees & Binary Trees", bg: "from-indigo-500/80 to-indigo-700/90" },
+    { icon: <FaTree />, name: "Trie", bg: "from-indigo-400/80 to-indigo-700/80" },
+    { icon: <FaProjectDiagram />, name: "Linked List", bg: "from-emerald-400/80 to-emerald-700/90" }
+  ];
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 to-yellow-100 dark:from-gray-900 dark:to-gray-800px-6 md:px-16 py-16 bg-white dark:bg-black text-black dark:text-white select-none transition-colors duration-300">
-      <h1 className="text-4xl md:text-4xl font-bold mb-12 letterSpacing: '4px'  text-center " style={{ fontFamily: "'Montserrat', sans-serif" }}>DSA Dashboard</h1>
+    <Motion.div
+      initial={{ opacity: 0, y: 80 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="w-full min-h-screen bg-gradient-to-br from-orange-50 to-yellow-100 dark:from-gray-900 dark:to-gray-800 px-6 md:px-16 py-10 pb-12 text-black dark:text-white select-none transition-colors duration-300"
+    >
+      <h1 className="text-4xl md:text-4xl font-bold mb-12 letterSpacing: '4px'  text-center  " style={{ fontFamily: "'Montserrat', sans-serif" }}>DSA Dashboard</h1>
 
-      {/* Platforms */}
       <section>
-        <h2 className="text-2xl font-semibold mb-6"style={{ fontFamily: "'Montserrat', sans-serif" }}>Platforms</h2>
-
+        <h2 className="text-2xl font-semibold mb-6" style={{ fontFamily: "'Montserrat', sans-serif" }}>Platforms</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {platforms.map((p, idx) => (
             <a
@@ -75,10 +79,8 @@ export default function DsaHome() {
         </div>
       </section>
 
-      {/* Patterns */}
       <section className="mt-16">
         <h2 className="text-2xl font-semibold mb-6" style={{ fontFamily: "'Montserrat', sans-serif" }}>Patterns I've Practiced</h2>
-
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {patterns.map((pt, idx) => (
             <div
@@ -91,6 +93,6 @@ export default function DsaHome() {
           ))}
         </div>
       </section>
-    </div>
+    </Motion.div>
   );
 }

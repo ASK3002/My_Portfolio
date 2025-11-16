@@ -69,7 +69,7 @@ export default function Skills() {
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="min-h-screen w-full bg-gradient-to-tr from-yellow-50 to-orange-100 dark:from-gray-950 dark:to-gray-900 px-6 pt-24 pb-12"
+        className="min-h-screen w-full bg-gradient-to-tr from-yellow-50 to-orange-100 dark:from-gray-950 dark:to-gray-900 px-6 py-10 pb-12"
         style={{ fontFamily: "'Inter', sans-serif" }}
       >
         <div className="max-w-6xl mx-auto text-center space-y-12">

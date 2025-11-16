@@ -113,12 +113,12 @@ function Github() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="min-h-screen px-4 py-16 bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800"
+        className="min-h-screen px-4 py-10 bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800"
         style={{ fontFamily: "'Inter', 'Montserrat', sans-serif" }}
       >
         <div className="max-w-6xl mx-auto">
           <h1
-            className="text-4xl font-bold text-center text-amber-900 dark:text-orange-300 mb-16"
+            className="text-4xl font-bold text-center  dark:text-orange-300 mb-16"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             My Projects
