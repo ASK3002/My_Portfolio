@@ -29,7 +29,7 @@ export default function About() {
                 className="text-4xl font-extrabold text-orange-800 dark:text-orange-300 mb-6 tracking-tight"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                👋 About Me
+                About Me
               </h2>
               <p className="text-gray-900 dark:text-gray-100 text-lg sm:text-xl leading-relaxed mb-6 font-light">
                 I'm a second-year B.Tech Computer Science student at IIITDM Jabalpur with a strong academic record (CPI: 8.7).  
@@ -38,8 +38,8 @@ export default function About() {
               </p>
               <p className="text-gray-900 dark:text-gray-100 text-lg sm:text-xl leading-relaxed font-light">
                 Beyond tech, I'm a creative communicator with a background in leadership, debate, and art competitions.  
-                I believe in consistency, curiosity, and growing step by step — both as a learner and as a person.  
-                Let’s connect and learn together! 🚀
+                I believe in consistency, curiosity, and growing step by step ,  both as a learner and as a person.  
+                Let’s connect and learn together! 
               </p>
               {/* Optional: Add social/contact buttons here */}
             </div>
