@@ -67,7 +67,7 @@ const About = () => {
               <FaLaptopCode className="text-4xl mb-3 text-indigo-600 dark:text-indigo-400" />
               <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Montserrat', sans-serif" }}>Dev Interests</h3>
               <p className="text-sm">
-                Frontend (React.js) & Backend (Node.js, MongoDB). Moving towards Full-Stack development. My next focus is to learn Next.js for modern web apps.
+                Full-Stack MERN Developer skilled in building end-to-end web applications using React.js, Node.js, Express, MongoDB, along with Firebase integration, JWT authentication, and OAuth-based authorization.
               </p>
             </div>
 
