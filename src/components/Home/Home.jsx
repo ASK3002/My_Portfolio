@@ -77,7 +77,7 @@ export default function Home() {
             </span>
 
             <a
-              href="https://drive.google.com/file/d/1mFhQL49J206B4-uXt17oU77PNGvWIDBr/view?usp=sharing"
+              href="https://drive.google.com/file/d/16xlhYAoqDSNm0cNzGCvEyRjaGX7kp2ub/view?usp=sharing"
               target="_blank"
               className="p-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition"
               title="View Resume"
@@ -87,7 +87,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://drive.google.com/uc?export=download&id=1mFhQL49J206B4-uXt17oU77PNGvWIDBr"
+              href="https://drive.google.com/uc?export=download&id=16xlhYAoqDSNm0cNzGCvEyRjaGX7kp2ub"
               download
               className="p-3 rounded-full bg-green-600 hover:bg-green-700 text-white transition"
               title="Download Resume"
