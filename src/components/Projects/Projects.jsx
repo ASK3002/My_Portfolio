@@ -9,8 +9,8 @@ const deployedLinks = {
   "My_Portfolio": "https://ayushsinghkaushik-portfolio.netlify.app/",
   "RECO-Resume-CoverLetterBuilder": "https://reco-resume-cover-letter-builder.vercel.app/",
   "SpendSense": "https://spendsense-7a5q.onrender.com/",
-  "OpsAI-Efficiency": "https://ai-powered-operational-efficiency.vercel.app/",
-  "WHT-Mark": "https://whtmark-1.onrender.com"
+  "AI-Powered-Operational-Efficiency": "https://ai-powered-operational-efficiency.vercel.app/",
+  "WHTMark": "https://whtmark-1.onrender.com"
 };
 
 // Existing main projects
