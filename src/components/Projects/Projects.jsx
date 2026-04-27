@@ -7,11 +7,13 @@ const deployedLinks = {
   "Basic_React_Projects": "https://ask3002.github.io/Basic_React_Projects/",
   "BASIC_PROJECTS_HTML_CSS_JS": "https://ask3002.github.io/BASIC_PROJECTS_HTML_CSS_JS/",
   "My_Portfolio": "https://ayushsinghkaushik-portfolio.netlify.app/",
-  "RECO-Resume-CoverLetterBuilder":"https://reco-resume-cover-letter-builder.vercel.app/",
-  "SpendSense":"https://spendsense-7a5q.onrender.com/"
+  "RECO-Resume-CoverLetterBuilder": "https://reco-resume-cover-letter-builder.vercel.app/",
+  "SpendSense": "https://spendsense-7a5q.onrender.com/",
+  "OpsAI-Efficiency": "https://ai-powered-operational-efficiency.vercel.app/",
+  "WHT-Mark": "https://whtmark-1.onrender.com/"
 };
 
-const mainProjects = ["RECO-Resume-CoverLetterBuilder","SpendSense","My_Portfolio"];
+const mainProjects = ["OpsAI-Efficiency", "RECO-Resume-CoverLetterBuilder", "WHT-Mark"];
 
 function Github() {
   const repos = useLoaderData();
