@@ -10,17 +10,35 @@ const deployedLinks = {
   "RECO-Resume-CoverLetterBuilder": "https://reco-resume-cover-letter-builder.vercel.app/",
   "SpendSense": "https://spendsense-7a5q.onrender.com/",
   "OpsAI-Efficiency": "https://ai-powered-operational-efficiency.vercel.app/",
-  "WHT-Mark": "https://whtmark-1.onrender.com/"
+  "WHT-Mark": "https://whtmark-1.onrender.com"
 };
 
-const mainProjects = ["OpsAI-Efficiency", "RECO-Resume-CoverLetterBuilder", "WHT-Mark"];
+// Existing main projects
+const mainProjects = [
+  "AI-Powered-Operational-Efficiency",
+  "RECO-Resume-CoverLetterBuilder",
+  "WHTMark"
+];
+
+// NEW: Projects you are currently working on
+const workingOnProjects = ["ai-agentica", "Finova"];
 
 function Github() {
   const repos = useLoaderData();
-  console.log("DATA RECEIVED BY COMPONENT:", repos);
 
   const mainRepos = repos.filter(repo => mainProjects.includes(repo.name));
-  const otherRepos = repos.filter(repo => !mainProjects.includes(repo.name));
+
+  // Working on projects in fixed order: Finova first, then ai-agentica
+  const workingOnRepos = workingOnProjects
+    .map(name => repos.find(repo => repo.name === name))
+    .filter(Boolean);
+
+  // Rest of projects
+  const otherRepos = repos.filter(
+    repo =>
+      !mainProjects.includes(repo.name) &&
+      !workingOnProjects.includes(repo.name)
+  );
 
   const ProjectBlock = (repo, index, isMain) => {
     const deployed = deployedLinks[repo.name];
@@ -34,22 +52,33 @@ function Github() {
         className="bg-white dark:bg-gray-800 rounded-xl shadow-md border-l-4 border-orange-400 dark:border-orange-300 p-6 mb-10"
         style={{ fontFamily: "'Inter', sans-serif" }}
       >
-        {isMain && (
-          <div
-            className="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-md"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            ⭐ MAIN PROJECT
-          </div>
-        )}
+        {/* BADGES ROW */}
+        <div className="flex items-center gap-2 mb-3 flex-wrap">
+          {isMain && (
+            <div
+              className="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              ⭐ MAIN PROJECT
+            </div>
+          )}
+
+          {workingOnProjects.includes(repo.name) && (
+            <div
+              className="inline-block bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              🟢 WORKING ON
+            </div>
+          )}
+        </div>
 
         <h2
-  className="text-2xl font-semibold text-gray-800 dark:text-white mb-2 break-words max-w-full"
-  style={{ fontFamily: "'Montserrat', sans-serif', wordBreak: 'break-word'" }}
->
-  {repo.name}
-</h2>
-
+          className="text-2xl font-semibold text-gray-800 dark:text-white mb-2 break-words max-w-full"
+          style={{ fontFamily: "'Montserrat', sans-serif", wordBreak: 'break-word' }}
+        >
+          {repo.name}
+        </h2>
 
         {repo.description ? (
           <ul
@@ -60,7 +89,7 @@ function Github() {
               .split('. ')
               .map(line => line.trim())
               .filter(line => !/^Language:|^Stars:|^Last Updated:/i.test(line))
-              .slice(0, 3) // Limit to 3 points
+              .slice(0, 3)
               .map((line, idx) => (
                 <li
                   key={idx}
@@ -71,7 +100,10 @@ function Github() {
               ))}
           </ul>
         ) : (
-          <p className="text-sm text-gray-500 italic mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <p
+            className="text-sm text-gray-500 italic mb-4"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
             No description provided.
           </p>
         )}
@@ -105,7 +137,6 @@ function Github() {
 
   return (
     <>
-      {/* Google Fonts */}
       <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap"
         rel="stylesheet"
@@ -120,14 +151,25 @@ function Github() {
       >
         <div className="max-w-6xl mx-auto">
           <h1
-            className="text-4xl font-bold text-center  dark:text-orange-300 mb-16"
+            className="text-4xl font-bold text-center dark:text-orange-300 mb-16"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             My Projects
           </h1>
 
           {/* Main Projects */}
-          <div>{mainRepos.map((repo, index) => ProjectBlock(repo, index, true))}</div>
+          <div>
+            {mainRepos.map((repo, index) =>
+              ProjectBlock(repo, index, true)
+            )}
+          </div>
+
+          {/* Working On Projects */}
+          <div>
+            {workingOnRepos.map((repo, index) =>
+              ProjectBlock(repo, index, false)
+            )}
+          </div>
 
           {/* Other Projects */}
           <h2
@@ -136,7 +178,12 @@ function Github() {
           >
             Other Projects
           </h2>
-          <div>{otherRepos.map((repo, index) => ProjectBlock(repo, index, false))}</div>
+
+          <div>
+            {otherRepos.map((repo, index) =>
+              ProjectBlock(repo, index, false)
+            )}
+          </div>
         </div>
       </Motion.div>
     </>
@@ -145,36 +192,30 @@ function Github() {
 
 export default Github;
 
-
 export const githubInfoLoader = async () => {
   const cached = localStorage.getItem("reposCache");
   const cachedTime = localStorage.getItem("reposCacheTime");
 
-  // 1. Check for valid cache
   if (cached && Date.now() - cachedTime < 24 * 60 * 60 * 1000) {
     return JSON.parse(cached);
   }
 
-  // 2. Fetch data
-  const res = await fetch("https://api.github.com/users/ASK3002/repos");
+  const res = await fetch(
+    "https://api.github.com/users/ASK3002/repos"
+  );
 
-  // 3. Check if the fetch was successful
   if (!res.ok) {
-    // If fetch failed (e.g., rate limit), log error and return an empty array
-    // Importantly, DO NOT cache this failure.
     console.error("Failed to fetch GitHub repos:", res.status);
-    return []; 
+    return [];
   }
 
   let data = await res.json();
 
-  // 4. Check if data is an array
   if (!Array.isArray(data)) {
     console.error("Received unexpected data from GitHub API");
     return [];
   }
 
-  // 5. Filter and cache ONLY on success
   const filtered = data.filter(r => !r.fork);
 
   localStorage.setItem("reposCache", JSON.stringify(filtered));
