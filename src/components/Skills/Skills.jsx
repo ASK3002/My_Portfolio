@@ -26,128 +26,132 @@ import {
   SiRedux,
 } from 'react-icons/si';
 
-import { motion as Motion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { containerVariants, itemVariants } from '../PageTransition/PageTransition';
+import './Skills.css';
 
 const programmingStack = [
-  { name: 'C++', icon: <SiCplusplus className="text-blue-600 w-8 h-8" /> },
-  { name: 'Python', icon: <FaPython className="text-yellow-500 w-8 h-8" /> },
-  { name: 'C', icon: <span className="text-2xl font-bold text-gray-800 dark:text-gray-200">C</span> },
-  { name: 'Java', icon: <FaJava className="text-red-600 w-8 h-8" /> },
-  { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400 w-8 h-8" /> },
-  { name: 'PHP', icon: <FaPhp className="text-indigo-700 w-8 h-8" /> },
-  { name: 'SQL', icon: <span className="text-2xl font-bold text-gray-800 dark:text-gray-200">SQL</span> },
-  { name: 'ReactJS', icon: <FaReact className="text-cyan-500 w-8 h-8" /> },
-  { name: 'Node.js', icon: <FaNode className="text-green-600 w-8 h-8" /> },
-  { name: 'Express.js', icon: <SiExpress className="text-black dark:text-white w-8 h-8" /> },
-  { name: 'MongoDB', icon: <SiMongodb className="text-green-700 w-8 h-8" /> },
-  { name: 'MySQL', icon: <SiMysql className="text-blue-500 w-8 h-8" /> },
-  { name: 'Vite', icon: <SiVite className="text-purple-500 w-8 h-8" /> },
-  { name: 'Redux', icon: <SiRedux className="text-purple-600 w-8 h-8" /> },
+  { name: 'C++', icon: <SiCplusplus className="skill-icon skill-icon-cpp" />, level: 'Advanced', category: 'Programming' },
+  { name: 'Python', icon: <FaPython className="skill-icon skill-icon-python" />, level: 'Advanced', category: 'Programming' },
+  { name: 'C', icon: <span className="skill-icon skill-icon-c">C</span>, level: 'Intermediate', category: 'Programming' },
+  { name: 'Java', icon: <FaJava className="skill-icon skill-icon-java" />, level: 'Intermediate', category: 'Programming' },
+  { name: 'JavaScript', icon: <SiJavascript className="skill-icon skill-icon-js" />, level: 'Advanced', category: 'Frontend' },
+  { name: 'PHP', icon: <FaPhp className="skill-icon skill-icon-php" />, level: 'Intermediate', category: 'Backend' },
+  { name: 'SQL', icon: <span className="skill-icon skill-icon-sql">SQL</span>, level: 'Advanced', category: 'Database' },
+  { name: 'ReactJS', icon: <FaReact className="skill-icon skill-icon-react" />, level: 'Advanced', category: 'Frontend' },
+  { name: 'Node.js', icon: <FaNode className="skill-icon skill-icon-node" />, level: 'Advanced', category: 'Backend' },
+  { name: 'Express.js', icon: <SiExpress className="skill-icon skill-icon-express" />, level: 'Advanced', category: 'Backend' },
+  { name: 'MongoDB', icon: <SiMongodb className="skill-icon skill-icon-mongodb" />, level: 'Intermediate', category: 'Database' },
+  { name: 'MySQL', icon: <SiMysql className="skill-icon skill-icon-mysql" />, level: 'Advanced', category: 'Database' },
+  { name: 'Vite', icon: <SiVite className="skill-icon skill-icon-vite" />, level: 'Intermediate', category: 'Tools' },
+  { name: 'Redux', icon: <SiRedux className="skill-icon skill-icon-redux" />, level: 'Intermediate', category: 'Frontend' },
 ];
 
 const toolsAndTechnologies = [
-  { name: 'Git', icon: <FaGit className="text-red-500 w-8 h-8" /> },
-  { name: 'Docker', icon: <FaDocker className="text-blue-400 w-8 h-8" /> },
-  { name: 'VS Code', icon: <FaCode className="text-blue-600 w-8 h-8" /> },
-  { name: 'Postman', icon: <SiPostman className="text-orange-500 w-8 h-8" /> },
-  { name: 'Replit', icon: <SiReplit className="text-yellow-400 w-8 h-8" /> },
-  { name: 'Microsoft', icon: <FaMicrosoft className="text-blue-700 w-8 h-8" /> },
-  { name: 'Cloudinary', icon: <FaCloud className="text-indigo-400 w-8 h-8" /> },
-  { name: 'EmailJS', icon: <FaEnvelope className="text-pink-500 w-8 h-8" /> },
+  { name: 'Git', icon: <FaGit className="skill-icon skill-icon-git" />, level: 'Advanced', category: 'Version Control' },
+  { name: 'Docker', icon: <FaDocker className="skill-icon skill-icon-docker" />, level: 'Intermediate', category: 'DevOps' },
+  { name: 'VS Code', icon: <FaCode className="skill-icon skill-icon-vscode" />, level: 'Advanced', category: 'IDE' },
+  { name: 'Postman', icon: <SiPostman className="skill-icon skill-icon-postman" />, level: 'Advanced', category: 'API Testing' },
+  { name: 'Replit', icon: <SiReplit className="skill-icon skill-icon-replit" />, level: 'Intermediate', category: 'IDE' },
+  { name: 'Microsoft', icon: <FaMicrosoft className="skill-icon skill-icon-microsoft" />, level: 'Advanced', category: 'Office' },
+  { name: 'Cloudinary', icon: <FaCloud className="skill-icon skill-icon-cloud" />, level: 'Intermediate', category: 'Cloud' },
+  { name: 'EmailJS', icon: <FaEnvelope className="skill-icon skill-icon-email" />, level: 'Intermediate', category: 'Email Service' },
 ];
 
 export default function Skills() {
   return (
-    <>
-      {/* Google Fonts link - add once globally ideally */}
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap"
-        rel="stylesheet"
-      />
+    <motion.section
+      className="skills-section"
+      variants={containerVariants}
+      initial="initial"
+      animate="in"
+      exit="out"
+    >
+      <div className="skills-container">
+        {/* Header */}
+        <motion.div className="skills-header" variants={itemVariants}>
+          <h1 className="skills-title gradient-text">
+            Technical Skills
+          </h1>
+          <p className="skills-subtitle">
+            A versatile developer across frontend, backend, databases, and tools.
+          </p>
+        </motion.div>
 
-      <Motion.section
-        initial={{ opacity: 0, y: 80 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="min-h-screen w-full bg-gradient-to-tr from-yellow-50 to-orange-100 dark:from-gray-950 dark:to-gray-900 px-6 py-10 pb-12"
-        style={{ fontFamily: "'Inter', sans-serif" }}
-      >
-        <div className="max-w-6xl mx-auto text-center space-y-12">
-          {/* Header */}
-          <div>
-            <h1
-              className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            >
-              Technical Skills
-            </h1>
-            <p
-              className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
-              A versatile developer across frontend, backend, databases, and tools.
-            </p>
+        {/* Programming Stack */}
+        <motion.div className="skills-category" variants={itemVariants}>
+          <div className="category-header">
+            <FaCode className="category-icon" />
+            <h2 className="category-title">
+              Programming Stack
+            </h2>
           </div>
 
-          {/* Programming Stack */}
-          <div>
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <FaCode className="text-blue-600 text-2xl" />
-              <h2
-                className="text-3xl font-bold text-gray-800 dark:text-white"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
+          <div className="skills-grid">
+            {programmingStack.map((item, index) => (
+              <motion.div
+                key={index}
+                className="skill-card"
+                variants={itemVariants}
+                whileHover={{ 
+                  y: -8,
+                  scale: 1.02,
+                  boxShadow: '0 25px 50px rgba(139, 92, 246, 0.3)'
+                }}
+                transition={{ type: 'spring', stiffness: 300 }}
               >
-                Programming Stack
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-              {programmingStack.map((item, index) => (
-                <Motion.div
-                  key={index}
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                  className="flex flex-col items-center justify-center p-6 bg-white/40 dark:bg-white/10 backdrop-blur border border-gray-200 dark:border-gray-700 rounded-xl shadow-md"
-                >
+                <div className="skill-icon-wrapper">
                   {item.icon}
-                  <span className="mt-3 text-md font-medium text-gray-800 dark:text-gray-100" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    {item.name}
-                  </span>
-                </Motion.div>
-              ))}
-            </div>
+                </div>
+                <span className="skill-name">
+                  {item.name}
+                </span>
+                <div className="skill-details">
+                  <span className="skill-level">{item.level}</span>
+                  <span className="skill-category">{item.category}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Tools & Tech */}
+        <motion.div className="skills-category" variants={itemVariants}>
+          <div className="category-header">
+            <FaTools className="category-icon" />
+            <h2 className="category-title">
+              Tools & Technologies
+            </h2>
           </div>
 
-          {/* Tools & Tech */}
-          <div>
-            <div className="flex items-center justify-center gap-3 mb-6 mt-10">
-              <FaTools className="text-blue-600 text-2xl" />
-              <h2
-                className="text-3xl font-bold text-gray-800 dark:text-white"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
+          <div className="skills-grid">
+            {toolsAndTechnologies.map((item, index) => (
+              <motion.div
+                key={index}
+                className="skill-card"
+                variants={itemVariants}
+                whileHover={{ 
+                  y: -8,
+                  scale: 1.02,
+                  boxShadow: '0 25px 50px rgba(139, 92, 246, 0.3)'
+                }}
+                transition={{ type: 'spring', stiffness: 300 }}
               >
-                Tools & Technologies
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-              {toolsAndTechnologies.map((item, index) => (
-                <Motion.div
-                  key={index}
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                  className="flex flex-col items-center justify-center p-6 bg-white/40 dark:bg-white/10 backdrop-blur border border-gray-200 dark:border-gray-700 rounded-xl shadow-md"
-                >
+                <div className="skill-icon-wrapper">
                   {item.icon}
-                  <span className="mt-3 text-md font-medium text-gray-800 dark:text-gray-100" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    {item.name}
-                  </span>
-                </Motion.div>
-              ))}
-            </div>
+                </div>
+                <span className="skill-name">
+                  {item.name}
+                </span>
+                <div className="skill-details">
+                  <span className="skill-level">{item.level}</span>
+                  <span className="skill-category">{item.category}</span>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </div>
-      </Motion.section>
-    </>
+        </motion.div>
+      </div>
+    </motion.section>
   );
 }
