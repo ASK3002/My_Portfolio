@@ -68,56 +68,41 @@ export default function Home() {
           I design and develop sleek, performant websites. Currently diving deep into dsa, building strong projects, and sharing knowledge through writing.
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* CTA Cards */}
         <motion.div 
-          className="hero-buttons"
+          className="hero-cards"
           variants={itemVariants}
         >
+          {/* Read My Articles Card */}
           <a
             href="https://medium.com/@ayushsinghkaushik111"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary"
+            className="hero-card"
           >
-            📜 Read My Articles
+            <div className="card-icon">📜</div>
+            <div className="card-title">Read My Articles</div>
           </a>
 
+          {/* Contact Me Card */}
           <Link
             to="/contact"
-            className="btn-secondary"
+            className="hero-card"
           >
-            📞 Contact Me
+            <div className="card-icon">📞</div>
+            <div className="card-title">Contact Me</div>
           </Link>
-        </motion.div>
 
-        {/* Resume Section */}
-        <motion.div 
-          className="resume-section"
-          variants={itemVariants}
-        >
-          <div className="resume-label">
-            📄 My Resume
-          </div>
-          
-          <div className="resume-actions">
-            <a
-              href="https://drive.google.com/file/d/19l_V2Oa62epyFrp3K0IoKX_0CqaDhrV1/view?usp=sharing"
-              target="_blank"
-              className="resume-btn resume-btn-view"
-              title="View Resume"
-            >
-              <FiEye size={20} />
-            </a>
-
-            <a
-              href="https://drive.google.com/uc?export=download&id=19l_V2Oa62epyFrp3K0IoKX_0CqaDhrV1"
-              download
-              className="resume-btn resume-btn-download"
-              title="Download Resume"
-            >
-              <FiDownload size={20} />
-            </a>
-          </div>
+          {/* My Resume Card */}
+          <a
+            href="https://drive.google.com/file/d/19l_V2Oa62epyFrp3K0IoKX_0CqaDhrV1/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-card"
+          >
+            <div className="card-icon">📄</div>
+            <div className="card-title">My Resume</div>
+          </a>
         </motion.div>
       </div>
 
