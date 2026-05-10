@@ -1,5 +1,5 @@
 import React from "react";
-import { motion as Motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   SiLeetcode,
   SiCodeforces,
@@ -16,83 +16,138 @@ import {
   FaLightbulb,
   FaTree,
 } from "react-icons/fa";
+import { containerVariants, itemVariants } from '../../PageTransition/PageTransition';
+import './DsaHome.css';
 
 export default function DsaHome() {
   const platforms = [
     {
-      icon: <SiLeetcode className="text-4xl" />,
+      icon: <SiLeetcode className="platform-icon platform-leetcode" />,
       name: "LeetCode",
       link: "https://leetcode.com/u/A_S_K_Ayush/",
+      stats: "250+ Problems",
+      level: "Advanced"
     },
     {
-      icon: <SiCodeforces className="text-4xl" />,
+      icon: <SiCodeforces className="platform-icon platform-codeforces" />,
       name: "CodeForces",
       link: "https://codeforces.com/profile/a_s_k_ayush",
+      stats: "1500+ Rating",
+      level: "Intermediate"
     },
     {
-      icon: <SiGeeksforgeeks className="text-4xl" />,
+      icon: <SiGeeksforgeeks className="platform-icon platform-gfg" />,
       name: "GFG",
       link: "https://www.geeksforgeeks.org/user/askayush/",
+      stats: "300+ Problems",
+      level: "Advanced"
     },
     {
-      icon: <SiCodechef className="text-4xl" />,
+      icon: <SiCodechef className="platform-icon platform-codechef" />,
       name: "CodeChef",
       link: "https://www.codechef.com/users/a_s_k_ayush",
+      stats: "3-Star",
+      level: "Intermediate"
     },
   ];
 
   const patterns = [
-    { icon: <FaCubes />, name: "Sliding Window & Two Pointers", bg: "from-purple-500/80 to-purple-700/90" },
-    { icon: <FaSearch />, name: "Binary Search & Bit Manipulation", bg: "from-pink-500/80 to-pink-700/90" },
-    { icon: <FaRetweet />, name: "Backtracking & Recursion", bg: "from-yellow-500/80 to-yellow-700/90" },
-    { icon: <FaProjectDiagram />, name: "Dynamic Programming", bg: "from-green-500/80 to-green-700/90" },
-    { icon: <FaNetworkWired />, name: "Graphs (BFS/DFS/Union Find)", bg: "from-blue-500/80 to-blue-700/90" },
-    { icon: <FaCalculator />, name: "Stacks, Queues & Heaps", bg: "from-red-500/80 to-red-700/90" },
-    { icon: <FaLightbulb />, name: "Hashing, Prefix Sum, Greedy", bg: "from-teal-500/80 to-teal-700/90" },
-    { icon: <FaTree />, name: "Trees & Binary Trees", bg: "from-indigo-500/80 to-indigo-700/90" },
-    { icon: <FaTree />, name: "Trie", bg: "from-indigo-400/80 to-indigo-700/80" },
-    { icon: <FaProjectDiagram />, name: "Linked List", bg: "from-emerald-400/80 to-emerald-700/90" }
+    { icon: <FaCubes />, name: "Sliding Window & Two Pointers", difficulty: "Medium", problems: "50+", bg: "from-purple-500/80 to-purple-700/90" },
+    { icon: <FaSearch />, name: "Binary Search & Bit Manipulation", difficulty: "Medium", problems: "40+", bg: "from-pink-500/80 to-pink-700/90" },
+    { icon: <FaRetweet />, name: "Backtracking & Recursion", difficulty: "Hard", problems: "30+", bg: "from-yellow-500/80 to-yellow-700/90" },
+    { icon: <FaProjectDiagram />, name: "Dynamic Programming", difficulty: "Hard", problems: "35+", bg: "from-green-500/80 to-green-700/90" },
+    { icon: <FaNetworkWired />, name: "Graphs (BFS/DFS/Union Find)", difficulty: "Hard", problems: "45+", bg: "from-blue-500/80 to-blue-700/90" },
+    { icon: <FaCalculator />, name: "Stacks, Queues & Heaps", difficulty: "Easy", problems: "60+", bg: "from-red-500/80 to-red-700/90" },
+    { icon: <FaLightbulb />, name: "Hashing, Prefix Sum, Greedy", difficulty: "Medium", problems: "55+", bg: "from-teal-500/80 to-teal-700/90" },
+    { icon: <FaTree />, name: "Trees & Binary Trees", difficulty: "Medium", problems: "40+", bg: "from-indigo-500/80 to-indigo-700/90" },
+    { icon: <FaTree />, name: "Trie", difficulty: "Medium", problems: "15+", bg: "from-indigo-400/80 to-indigo-700/80" },
+    { icon: <FaProjectDiagram />, name: "Linked List", difficulty: "Easy", problems: "35+", bg: "from-emerald-400/80 to-emerald-700/90" }
   ];
 
   return (
-    <Motion.div
-      initial={{ opacity: 0, y: 80 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="w-full min-h-screen bg-gradient-to-br from-orange-50 to-yellow-100 dark:from-gray-900 dark:to-gray-800 px-6 md:px-16 py-10 pb-12 text-black dark:text-white select-none transition-colors duration-300"
+    <motion.section
+      className="dsa-section"
+      variants={containerVariants}
+      initial="initial"
+      animate="in"
+      exit="out"
     >
-      <h1 className="text-4xl md:text-4xl font-bold mb-12 letterSpacing: '4px'  text-center  " style={{ fontFamily: "'Montserrat', sans-serif" }}>DSA Dashboard</h1>
+      <div className="dsa-container">
+        <motion.h1 className="dsa-title gradient-text" variants={itemVariants}>
+          DSA Dashboard
+        </motion.h1>
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-6" style={{ fontFamily: "'Montserrat', sans-serif" }}>Platforms</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {platforms.map((p, idx) => (
-            <a
-              key={idx}
-              href={p.link}
-              className="group flex flex-col items-center justify-center p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-zinc-500 transition-all shadow-sm hover:shadow-md"
-            >
-              {p.icon}
-              <p className="mt-3 text-lg font-medium">{p.name}</p>
-            </a>
-          ))}
-        </div>
-      </section>
+        <motion.div className="dsa-subtitle" variants={itemVariants}>
+          <p className="subtitle-text">
+            Mastering algorithms and data structures through competitive programming
+          </p>
+        </motion.div>
 
-      <section className="mt-16">
-        <h2 className="text-2xl font-semibold mb-6" style={{ fontFamily: "'Montserrat', sans-serif" }}>Patterns I've Practiced</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {patterns.map((pt, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center justify-center p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-zinc-500 transition-all shadow-sm hover:shadow-md"
-            >
-              {pt.icon}
-              <p className="mt-3 text-lg font-medium">{pt.name}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    </Motion.div>
+        {/* Platforms Section */}
+        <motion.div className="dsa-category" variants={itemVariants}>
+          <div className="category-header">
+            <h2 className="category-title">Competitive Platforms</h2>
+          </div>
+          <div className="platforms-grid">
+            {platforms.map((p, idx) => (
+              <motion.a
+                key={idx}
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="platform-card"
+                variants={itemVariants}
+                whileHover={{ 
+                  y: -8,
+                  scale: 1.02,
+                  boxShadow: '0 25px 50px rgba(139, 92, 246, 0.3)'
+                }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <div className="platform-icon-wrapper">
+                  {p.icon}
+                </div>
+                <h3 className="platform-name">{p.name}</h3>
+                <div className="platform-stats">
+                  <span className="platform-stat">{p.stats}</span>
+                  <span className="platform-level">{p.level}</span>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Patterns Section */}
+        <motion.div className="dsa-category" variants={itemVariants}>
+          <div className="category-header">
+            <h2 className="category-title">DSA Patterns Mastered</h2>
+          </div>
+          <div className="patterns-grid">
+            {patterns.map((pt, idx) => (
+              <motion.div
+                key={idx}
+                className={`pattern-card ${pt.bg}`}
+                variants={itemVariants}
+                whileHover={{ 
+                  y: -8,
+                  scale: 1.02,
+                  boxShadow: '0 25px 50px rgba(139, 92, 246, 0.3)'
+                }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <div className="pattern-icon-wrapper">
+                  {pt.icon}
+                </div>
+                <h3 className="pattern-name">{pt.name}</h3>
+                <div className="pattern-stats">
+                  <span className="pattern-difficulty">{pt.difficulty}</span>
+                  <span className="pattern-problems">{pt.problems}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </motion.section>
   );
 }
