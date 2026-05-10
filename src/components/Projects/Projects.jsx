@@ -1,7 +1,9 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { motion as Motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { containerVariants, itemVariants } from '../PageTransition/PageTransition';
+import './Projects.css';
 
 const deployedLinks = {
   "Basic_React_Projects": "https://ask3002.github.io/Basic_React_Projects/",
@@ -44,77 +46,61 @@ function Github() {
     const deployed = deployedLinks[repo.name];
 
     return (
-      <Motion.div
+      <motion.div
         key={repo.id}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.1 }}
-        className="bg-white dark:bg-gray-800 rounded-xl shadow-md border-l-4 border-orange-400 dark:border-orange-300 p-6 mb-10"
-        style={{ fontFamily: "'Inter', sans-serif" }}
+        className="project-card"
+        variants={itemVariants}
+        whileHover={{ 
+          y: -8,
+          scale: 1.02,
+          boxShadow: '0 25px 50px rgba(139, 92, 246, 0.3)'
+        }}
+        transition={{ type: 'spring', stiffness: 300 }}
       >
         {/* BADGES ROW */}
-        <div className="flex items-center gap-2 mb-3 flex-wrap">
+        <div className="project-badges">
           {isMain && (
-            <div
-              className="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            >
+            <div className="project-badge main-badge">
               ⭐ MAIN PROJECT
             </div>
           )}
 
           {workingOnProjects.includes(repo.name) && (
-            <div
-              className="inline-block bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md"
-              style={{ fontFamily: "'Montserrat', sans-serif" }}
-            >
+            <div className="project-badge working-badge">
               🟢 WORKING ON
             </div>
           )}
         </div>
 
-        <h2
-          className="text-2xl font-semibold text-gray-800 dark:text-white mb-2 break-words max-w-full"
-          style={{ fontFamily: "'Montserrat', sans-serif", wordBreak: 'break-word' }}
-        >
+        <h2 className="project-title">
           {repo.name}
         </h2>
 
         {repo.description ? (
-          <ul
-            className="mb-5 space-y-2 text-[18px] text-gray-700 dark:text-gray-300"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-          >
+          <ul className="project-description">
             {repo.description
               .split('. ')
               .map(line => line.trim())
               .filter(line => !/^Language:|^Stars:|^Last Updated:/i.test(line))
               .slice(0, 3)
               .map((line, idx) => (
-                <li
-                  key={idx}
-                  className="relative pl-5 before:content-['•'] before:absolute before:left-0 before:text-orange-500 before:text-lg"
-                >
+                <li key={idx}>
                   {line}
                 </li>
               ))}
           </ul>
         ) : (
-          <p
-            className="text-sm text-gray-500 italic mb-4"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-          >
+          <p className="project-no-description">
             No description provided.
           </p>
         )}
 
-        <div className="flex flex-wrap gap-4 mt-3">
+        <div className="project-actions">
           <a
             href={repo.html_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-gray-900 text-white dark:bg-white dark:text-black px-4 py-2 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition"
-            style={{ fontFamily: "'Inter', sans-serif" }}
+            className="project-btn github-btn"
           >
             <FaGithub /> GitHub
           </a>
@@ -124,69 +110,66 @@ function Github() {
               href={deployed}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              className="project-btn demo-btn"
             >
               <FaExternalLinkAlt /> Live Demo
             </a>
           )}
         </div>
-      </Motion.div>
+      </motion.div>
     );
   };
 
   return (
-    <>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap"
-        rel="stylesheet"
-      />
+    <motion.section
+      className="projects-section"
+      variants={containerVariants}
+      initial="initial"
+      animate="in"
+      exit="out"
+    >
+      <div className="projects-container">
+        <motion.h1 className="projects-title gradient-text" variants={itemVariants}>
+          My Projects
+        </motion.h1>
 
-      <Motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="min-h-screen px-4 py-10 bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800"
-        style={{ fontFamily: "'Inter', 'Montserrat', sans-serif" }}
-      >
-        <div className="max-w-6xl mx-auto">
-          <h1
-            className="text-4xl font-bold text-center dark:text-orange-300 mb-16"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            My Projects
-          </h1>
-
-          {/* Main Projects */}
-          <div>
+        {/* Main Projects */}
+        <motion.div className="projects-category" variants={itemVariants}>
+          <div className="category-header">
+            <h2 className="category-title">Featured Projects</h2>
+          </div>
+          <div className="projects-grid">
             {mainRepos.map((repo, index) =>
               ProjectBlock(repo, index, true)
             )}
           </div>
+        </motion.div>
 
-          {/* Working On Projects */}
-          <div>
+        {/* Working On Projects */}
+        <motion.div className="projects-category" variants={itemVariants}>
+          <div className="category-header">
+            <h2 className="category-title">Currently Working On</h2>
+          </div>
+          <div className="projects-grid">
             {workingOnRepos.map((repo, index) =>
               ProjectBlock(repo, index, false)
             )}
           </div>
+        </motion.div>
 
-          {/* Other Projects */}
-          <h2
-            className="text-2xl font-semibold text-orange-700 dark:text-orange-300 mt-12 mb-6"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
-          >
-            Other Projects
-          </h2>
-
-          <div>
+        {/* Other Projects */}
+        <motion.div className="projects-category" variants={itemVariants}>
+          <div className="category-header">
+            <h2 className="category-title">Other Projects</h2>
+          </div>
+          <div className="projects-grid">
             {otherRepos.map((repo, index) =>
               ProjectBlock(repo, index, false)
             )}
           </div>
-        </div>
-      </Motion.div>
-    </>
+        </motion.div>
+      </div>
+    </motion.section>
   );
 }
 
