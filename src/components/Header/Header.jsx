@@ -13,6 +13,7 @@ import {
   FaDraftingCompass
 } from 'react-icons/fa';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
+import './Header.css';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,66 +26,66 @@ export default function Header() {
     { path: '/about', label: 'About', icon: FaUser },
   ];
 
-  const fontStyle = { fontFamily: "'Inter', 'Montserrat', sans-serif" };
-
   return (
-    <header className="sticky z-50 top-0 bg-white dark:bg-gray-900" style={fontStyle}>
-      <nav className="border-gray-200 px-4 lg:px-6 py-2.5">
-        <div className="flex items-center justify-between w-full">
+    <header className="glass-navbar">
+      <nav className="nav-container">
+        <div className="nav-content">
           {/* Logo + Name */}
-          <div className="flex items-center space-x-3 pl-2" style={fontStyle}>
-            <img
-              src="https://static.vecteezy.com/system/resources/previews/020/617/232/non_2x/ask-letter-logo-design-in-illustration-logo-calligraphy-designs-for-logo-poster-invitation-etc-vector.jpg"
-              className="h-16 w-16 rounded-full object-cover"
-              alt="Logo"
-            />
-            <span className="text-xl font-semibold whitespace-nowrap text-gray-800 dark:text-white" style={fontStyle}>
+          <div className="logo-container">
+            <div className="logo-wrapper">
+              <img
+                src="https://static.vecteezy.com/system/resources/previews/020/617/232/non_2x/ask-letter-logo-design-in-illustration-logo-calligraphy-designs-for-logo-poster-invitation-etc-vector.jpg"
+                className="logo-image"
+                alt="Logo"
+              />
+              <div className="logo-glow" />
+            </div>
+            <span className="logo-text">
               Ayush Singh Kaushik
             </span>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex space-x-6" style={fontStyle}>
+          <div className="desktop-nav">
             {navLinks.map((nav) => (
               <NavLink
                 key={nav.path}
                 to={nav.path}
                 className={({ isActive }) =>
-                  `text-xl px-3 py-2 rounded transition duration-200 ${
-                    isActive
-                      ? 'bg-orange-700/50 text-white'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
-                  }`
+                  `nav-link ${isActive ? 'nav-link-active' : 'nav-link-inactive'}`
                 }
-                style={fontStyle}
               >
-                <nav.icon />
+                <nav.icon className="nav-icon" />
+                <span className="nav-label">{nav.label}</span>
               </NavLink>
             ))}
           </div>
 
           {/* Desktop Socials + Toggle */}
-          <div className="hidden lg:flex items-center space-x-4 pr-2" style={fontStyle}>
+          <div className="desktop-actions">
             <a
               href="https://www.linkedin.com/in/ayush-singh-kaushik-7386a4294/"
               target="_blank"
               rel="noopener noreferrer"
+              className="social-link"
             >
-              <FaLinkedin className="w-5 h-5 text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400" />
+              <FaLinkedin className="social-icon" />
             </a>
             <a
               href="https://github.com/ASK3002"
               target="_blank"
               rel="noopener noreferrer"
+              className="social-link"
             >
-              <FaGithub className="w-5 h-5 text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400" />
+              <FaGithub className="social-icon" />
             </a>
             <a
               href="https://medium.com/@ayushsinghkaushik111"
               target="_blank"
               rel="noopener noreferrer"
+              className="social-link"
             >
-              <FaMedium className="w-5 h-5 text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400" />
+              <FaMedium className="social-icon" />
             </a>
             <ThemeToggle />
           </div>
@@ -92,63 +93,57 @@ export default function Header() {
           {/* Mobile Hamburger Icon */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-gray-700 dark:text-gray-300"
-            style={fontStyle}
+            className="mobile-menu-button"
           >
-            {isOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
+            {isOpen ? <FaTimes className="menu-icon" /> : <FaBars className="menu-icon" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden mt-4 space-y-3" style={fontStyle}>
+          <div className="mobile-menu">
             {/* Links */}
-            <div className="flex flex-col items-center space-y-4">
+            <div className="mobile-nav-links">
               {navLinks.map((nav) => (
                 <NavLink
                   key={nav.path}
                   to={nav.path}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `text-xl p-2 rounded flex items-center gap-2 ${
-                      isActive
-                        ? 'bg-orange-700/50 text-white'
-                        : 'text-gray-700 dark:text-gray-300 hover:text-orange-700 dark:hover:text-orange-400'
-                    }`
+                    `mobile-nav-link ${isActive ? 'mobile-nav-link-active' : 'mobile-nav-link-inactive'}`
                   }
-                  style={fontStyle}
                 >
-                  <nav.icon />
+                  <nav.icon className="mobile-nav-icon" />
                   <span>{nav.label}</span>
                 </NavLink>
               ))}
             </div>
 
             {/* Socials */}
-            <div className="flex flex-col items-center space-y-4 pt-4 border-t border-gray-300 dark:border-gray-600">
+            <div className="mobile-socials">
               <a
                 href="https://www.linkedin.com/in/ayush-singh-kaushik-7386a4294/"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={fontStyle}
+                className="mobile-social-link"
               >
-                <FaLinkedin className="w-5 h-5" />
+                <FaLinkedin className="mobile-social-icon" />
               </a>
               <a
                 href="https://github.com/ASK3002"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={fontStyle}
+                className="mobile-social-link"
               >
-                <FaGithub className="w-5 h-5" />
+                <FaGithub className="mobile-social-icon" />
               </a>
               <a
                 href="https://medium.com/@ayushsinghkaushik111"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={fontStyle}
+                className="mobile-social-link"
               >
-                <FaMedium className="w-5 h-5" />
+                <FaMedium className="mobile-social-icon" />
               </a>
               <ThemeToggle />
             </div>
