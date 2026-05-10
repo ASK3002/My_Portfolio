@@ -95,7 +95,7 @@
   font-weight: 400;
   color: var(--text-muted);
   max-width: 800px;
-  line-height: 1.8;
+  line-height: 1.2;
   letter-spacing: 0.01em;
 }
 
@@ -205,7 +205,7 @@
 
 .resume-btn {
   width: 50px;
-  height: 50px;
+  height: 40px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -247,28 +247,17 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 100px var(--space-4) var(--space-8);
+    padding: 100px var(--space-4) var(--space-12);
   }
   
   .hero-title {
-    text-align: center;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px;
+    margin-bottom: var(--space-8);
   }
   
   .btn-primary,
   .btn-secondary {
-    width: 100%;
-  }
-  
-  .resume-section {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--space-4);
+    padding: var(--space-3) var(--space-6);
+    font-size: 0.875rem;
   }
   
   .resume-actions {
