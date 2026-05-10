@@ -2,18 +2,29 @@ import React from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import { Outlet, useLocation } from 'react-router-dom';
+import AnimatedBackground from './components/AnimatedBackground/AnimatedBackground';
+import FloatingOrbs from './components/FloatingOrbs/FloatingOrbs';
+import PageTransition from './components/PageTransition/PageTransition';
+import './Layout.css';
 
 function Layout() {
   const location = useLocation();
   const isHome = location.pathname === '/';
 
   return (
-    <div className="font-script min-h-screen w-full bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
-      <Header />
-      <main className="min-h-screen">
-        <Outlet />
-      </main>
-      {!isHome && <Footer />}
+    <div className="layout-container">
+      <AnimatedBackground />
+      <FloatingOrbs />
+      
+      <div className="layout-content">
+        <Header />
+        <main className="main-content">
+          <PageTransition>
+            <Outlet />
+          </PageTransition>
+        </main>
+        {!isHome && <Footer />}
+      </div>
     </div>
   );
 }
