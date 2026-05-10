@@ -1,28 +1,31 @@
 // components/ThemeToggle.jsx
 import React, { useEffect, useState } from 'react';
+import './ThemeToggle.css';
 
 export default function ThemeToggle() {
-  const [darkMode, setDarkMode] = useState(
-    () => localStorage.theme === 'dark'
-  );
+  const [isDark, setIsDark] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  });
 
   useEffect(() => {
-    const root = window.document.documentElement;
-    if (darkMode) {
-      root.classList.add('dark');
-      localStorage.theme = 'dark';
+    const root = document.documentElement;
+    if (isDark) {
+      root.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
     } else {
-      root.classList.remove('dark');
-      localStorage.theme = 'light';
+      root.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
     }
-  }, [darkMode]);
+  }, [isDark]);
 
   return (
     <button
-      onClick={() => setDarkMode(!darkMode)}
-      className="p-2 text-sm rounded bg-gray-200 dark:bg-gray-700 dark:text-white"
+      onClick={() => setIsDark(!isDark)}
+      className="theme-toggle-btn"
+      title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {darkMode ? '🌙 Dark' : '☀️ Light'}
+      {isDark ? '🌙' : '☀️'}
     </button>
   );
 }
