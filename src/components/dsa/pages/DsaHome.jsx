@@ -48,17 +48,161 @@ export default function DsaHome() {
   ];
 
   const patterns = [
-    { icon: <FaCubes />, name: "Sliding Window & Two Pointers", difficulty: "Medium", problems: "50+", bg: "from-purple-500/80 to-purple-700/90" },
-    { icon: <FaSearch />, name: "Binary Search & Bit Manipulation", difficulty: "Medium", problems: "40+", bg: "from-pink-500/80 to-pink-700/90" },
-    { icon: <FaRetweet />, name: "Backtracking & Recursion", difficulty: "Hard", problems: "30+", bg: "from-yellow-500/80 to-yellow-700/90" },
-    { icon: <FaProjectDiagram />, name: "Dynamic Programming", difficulty: "Hard", problems: "35+", bg: "from-green-500/80 to-green-700/90" },
-    { icon: <FaNetworkWired />, name: "Graphs (BFS/DFS/Union Find)", difficulty: "Hard", problems: "45+", bg: "from-blue-500/80 to-blue-700/90" },
-    { icon: <FaCalculator />, name: "Stacks, Queues & Heaps", difficulty: "Easy", problems: "60+", bg: "from-red-500/80 to-red-700/90" },
-    { icon: <FaLightbulb />, name: "Hashing, Prefix Sum, Greedy", difficulty: "Medium", problems: "55+", bg: "from-teal-500/80 to-teal-700/90" },
-    { icon: <FaTree />, name: "Trees & Binary Trees", difficulty: "Medium", problems: "40+", bg: "from-indigo-500/80 to-indigo-700/90" },
-    { icon: <FaTree />, name: "Trie", difficulty: "Medium", problems: "15+", bg: "from-indigo-400/80 to-indigo-700/80" },
-    { icon: <FaProjectDiagram />, name: "Linked List", difficulty: "Easy", problems: "35+", bg: "from-emerald-400/80 to-emerald-700/90" }
-  ];
+  {
+    icon: <FaCubes />,
+    name: "Arrays",
+    difficulty: "Medium",
+    problems: "352+",
+    bg: "from-purple-500/80 to-purple-700/90"
+  },
+  {
+    icon: <FaProjectDiagram />,
+    name: "Dynamic Programming",
+    difficulty: "Hard",
+    problems: "122+",
+    bg: "from-green-500/80 to-green-700/90"
+  },
+  {
+    icon: <FaLightbulb />,
+    name: "HashMap & Set",
+    difficulty: "Medium",
+    problems: "121+",
+    bg: "from-teal-500/80 to-teal-700/90"
+  },
+  {
+    icon: <FaSearch />,
+    name: "Strings",
+    difficulty: "Medium",
+    problems: "110+",
+    bg: "from-pink-500/80 to-pink-700/90"
+  },
+  {
+    icon: <FaCalculator />,
+    name: "Math",
+    difficulty: "Medium",
+    problems: "90+",
+    bg: "from-yellow-500/80 to-yellow-700/90"
+  },
+  {
+    icon: <FaRetweet />,
+    name: "Sorting",
+    difficulty: "Easy",
+    problems: "75+",
+    bg: "from-orange-500/80 to-orange-700/90"
+  },
+  {
+    icon: <FaNetworkWired />,
+    name: "DFS",
+    difficulty: "Medium",
+    problems: "73+",
+    bg: "from-blue-500/80 to-blue-700/90"
+  },
+  {
+    icon: <FaTree />,
+    name: "Trees",
+    difficulty: "Medium",
+    problems: "70+",
+    bg: "from-indigo-500/80 to-indigo-700/90"
+  },
+  {
+    icon: <FaNetworkWired />,
+    name: "BFS",
+    difficulty: "Medium",
+    problems: "60+",
+    bg: "from-cyan-500/80 to-cyan-700/90"
+  },
+  {
+    icon: <FaCubes />,
+    name: "Matrix",
+    difficulty: "Medium",
+    problems: "58+",
+    bg: "from-slate-500/80 to-slate-700/90"
+  },
+  {
+    icon: <FaSearch />,
+    name: "Binary Search",
+    difficulty: "Medium",
+    problems: "54+",
+    bg: "from-rose-500/80 to-rose-700/90"
+  },
+  {
+    icon: <FaRetweet />,
+    name: "Two Pointers",
+    difficulty: "Easy",
+    problems: "53+",
+    bg: "from-fuchsia-500/80 to-fuchsia-700/90"
+  },
+  {
+    icon: <FaLightbulb />,
+    name: "Greedy Algorithms",
+    difficulty: "Medium",
+    problems: "49+",
+    bg: "from-lime-500/80 to-lime-700/90"
+  },
+  {
+    icon: <FaTree />,
+    name: "Binary Tree",
+    difficulty: "Easy",
+    problems: "43+",
+    bg: "from-violet-500/80 to-violet-700/90"
+  },
+  {
+    icon: <FaCalculator />,
+    name: "Bit Manipulation",
+    difficulty: "Medium",
+    problems: "42+",
+    bg: "from-amber-500/80 to-amber-700/90"
+  },
+  {
+    icon: <FaProjectDiagram />,
+    name: "Graph Theory",
+    difficulty: "Hard",
+    problems: "39+",
+    bg: "from-sky-500/80 to-sky-700/90"
+  },
+  {
+    icon: <FaCubes />,
+    name: "Sliding Window",
+    difficulty: "Medium",
+    problems: "23+",
+    bg: "from-purple-400/80 to-purple-700/90"
+  },
+  {
+    icon: <FaNetworkWired />,
+    name: "Union Find",
+    difficulty: "Hard",
+    problems: "23+",
+    bg: "from-blue-400/80 to-blue-700/90"
+  },
+  {
+    icon: <FaProjectDiagram />,
+    name: "Linked Lists",
+    difficulty: "Easy",
+    problems: "22+",
+    bg: "from-emerald-400/80 to-emerald-700/90"
+  },
+  {
+    icon: <FaRetweet />,
+    name: "Backtracking",
+    difficulty: "Hard",
+    problems: "17+",
+    bg: "from-red-400/80 to-red-700/90"
+  },
+  {
+    icon: <FaTree />,
+    name: "Trie",
+    difficulty: "Medium",
+    problems: "7+",
+    bg: "from-indigo-400/80 to-indigo-700/80"
+  },
+  {
+    icon: <FaProjectDiagram />,
+    name: "Segment Tree",
+    difficulty: "Hard",
+    problems: "6+",
+    bg: "from-gray-500/80 to-gray-700/90"
+  }
+];
 
   return (
     <motion.section
