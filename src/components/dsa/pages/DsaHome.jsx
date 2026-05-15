@@ -25,7 +25,7 @@ export default function DsaHome() {
       icon: <SiLeetcode className="platform-icon platform-leetcode" />,
       name: "LeetCode",
       link: "https://leetcode.com/u/A_S_K_Ayush/",
-      stats: "630+ Problems"
+      stats: "1850+ Rating ( Knight , Top 6.1% )"
     },
     {
       icon: <SiCodeforces className="platform-icon platform-codeforces" />,
@@ -36,7 +36,7 @@ export default function DsaHome() {
     {
       icon: <SiGeeksforgeeks className="platform-icon platform-gfg" />,
       name: "GFG",
-      link: "https://www.geeksforgeeks.org/user/askayush/",
+      link: "https://www.geeksforgeeks.org/profile/askayush?tab=activity",
       stats: "100+ Problems"
     },
     {
