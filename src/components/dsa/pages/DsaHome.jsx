@@ -25,29 +25,25 @@ export default function DsaHome() {
       icon: <SiLeetcode className="platform-icon platform-leetcode" />,
       name: "LeetCode",
       link: "https://leetcode.com/u/A_S_K_Ayush/",
-      stats: "250+ Problems",
-      level: "Advanced"
+      stats: "630+ Problems"
     },
     {
       icon: <SiCodeforces className="platform-icon platform-codeforces" />,
       name: "CodeForces",
       link: "https://codeforces.com/profile/a_s_k_ayush",
-      stats: "1500+ Rating",
-      level: "Intermediate"
+      stats: "1220 Rating (max. pupil, 1289) "
     },
     {
       icon: <SiGeeksforgeeks className="platform-icon platform-gfg" />,
       name: "GFG",
       link: "https://www.geeksforgeeks.org/user/askayush/",
-      stats: "300+ Problems",
-      level: "Advanced"
+      stats: "100+ Problems"
     },
     {
       icon: <SiCodechef className="platform-icon platform-codechef" />,
       name: "CodeChef",
       link: "https://www.codechef.com/users/a_s_k_ayush",
-      stats: "3-Star",
-      level: "Intermediate"
+      stats: "2-Star"
     },
   ];
 

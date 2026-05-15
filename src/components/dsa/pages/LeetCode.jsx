@@ -40,20 +40,20 @@ const LeetCode = () => {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <StatCard icon={<FaMedal />} label="Top Percentage" value="Top 31.63%" color="bg-purple-500" />
-            <StatCard icon={<FaChartLine />} label="Contest Rating" value="1,550" color="bg-blue-500" />
-            <StatCard icon={<FaUserCheck />} label="Global Ranking" value="224,340 / 720,317" color="bg-green-500" />
-            <StatCard icon={<FaCalendarCheck />} label="Total Active Days" value="113 days" color="bg-teal-500" />
-            <StatCard icon={<FaFire />} label="Max Streak" value="18 days" color="bg-red-500" />
+            <StatCard icon={<FaMedal />} label="Top Percentage" value="Top 6.1%" color="bg-purple-500" />
+            <StatCard icon={<FaChartLine />} label="Contest Rating" value="1,850" color="bg-blue-500" />
+            <StatCard icon={<FaUserCheck />} label="Global Ranking" value="69,274/874,349" color="bg-green-500" />
+            <StatCard icon={<FaCalendarCheck />} label="Total Active Days" value="224 days" color="bg-teal-500" />
+            <StatCard icon={<FaFire />} label="Max Streak" value="49 days" color="bg-red-500" />
             <div className="col-span-1 sm:col-span-2">
               <div className="bg-gray-700 rounded p-4 flex flex-wrap gap-4 justify-between items-center text-white">
                 <p className="text-sm font-semibold">
-                  👨‍💻 Total Solved: <span className="text-yellow-300">241</span>
+                  👨‍💻 Total Solved: <span className="text-yellow-300">631</span>
                 </p>
                 <p className="text-sm">
-                  📊 <span className="text-green-300">Easy: 88</span> |{" "}
-                  <span className="text-yellow-300">Medium: 126</span> |{" "}
-                  <span className="text-red-400">Hard: 27</span>
+                  📊 <span className="text-green-300">Easy: 214</span> |{" "}
+                  <span className="text-yellow-300">Medium: 355</span> |{" "}
+                  <span className="text-red-400">Hard: 62</span>
                 </p>
               </div>
             </div>

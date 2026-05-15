@@ -36,7 +36,7 @@ const GFG = () => {
             <StatCard
               icon={<FaCheckCircle />}
               label="Problems Solved"
-              value="79"
+              value="108"
               color="bg-emerald-600"
             />
             <StatCard

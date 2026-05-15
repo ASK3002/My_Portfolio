@@ -41,25 +41,25 @@ const CodeChef = () => {
             <StatCard
               icon={<FaCodeBranch />}
               label="Contests Participated"
-              value="35"
+              value="40"
               color="bg-purple-600"
             />
             <StatCard
               icon={<FaTrophy />}
               label="Problems Solved"
-              value="152"
+              value="168"
               color="bg-indigo-600"
             />
             <StatCard
               icon={<FaChartLine />}
               label="Current Rating"
-              value="1441"
+              value="1500"
               color="bg-pink-600"
             />
             <StatCard
               icon={<FaChartLine />}
               label="Highest Rating"
-              value="1441"
+              value="1500"
               color="bg-pink-700"
             />
           </div>
