@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiDownload, FiEye } from 'react-icons/fi';
+import { FaPhoneAlt } from 'react-icons/fa';
 import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 import './Home.css';
@@ -89,7 +90,7 @@ export default function Home() {
             to="/contact"
             className="hero-card"
           >
-            <div className="card-icon">📞</div>
+            <div className="card-icon" style={{ color:'#65a765' }}><FaPhoneAlt /></div>
             <div className="card-title">Contact Me</div>
           </Link>
 
