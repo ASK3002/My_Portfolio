@@ -15,6 +15,14 @@ const deployedLinks = {
   "WHTMark": "https://whtmark-1.onrender.com"
 };
 
+// Manual descriptions fallback for repositories with null descriptions from GitHub
+const manualDescriptions = {
+  "TrustHire": "A hiring platform connecting employers with trusted candidates. Features include job posting, candidate profiles, and secure hiring workflows.",
+  "hotel-booking-app": "A comprehensive hotel booking application with room search, booking management, and payment integration.",
+  "ai-agentica": "An AI-powered agent framework for building intelligent automation systems.",
+  "Finova": "A financial management application for tracking expenses, budgets, and investments."
+};
+
 // Featured projects in specific order
 const mainProjects = [
   "TrustHire",
@@ -31,9 +39,6 @@ const workingOnProjects = ["ai-agentica", "Finova"];
 
 function Github() {
   const repos = useLoaderData();
-
-  console.log("All repos:", repos.map(r => r.name));
-  console.log("mainProjects:", mainProjects);
 
   // Map over mainProjects to preserve order and find matching repos
   const mainRepos = mainProjects
@@ -54,6 +59,8 @@ function Github() {
 
   const ProjectBlock = (repo, index, isMain) => {
     const deployed = deployedLinks[repo.name];
+    // Use manual description if GitHub description is null/empty
+    const description = repo.description || manualDescriptions[repo.name];
 
     return (
       <motion.div
@@ -86,9 +93,9 @@ function Github() {
           {repo.name}
         </h2>
 
-        {repo.description ? (
+        {description ? (
           <ul className="project-description">
-            {repo.description
+            {description
               .split('. ')
               .map(line => line.trim())
               .filter(line => !/^Language:|^Stars:|^Last Updated:/i.test(line))
