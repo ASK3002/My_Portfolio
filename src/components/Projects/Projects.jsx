@@ -15,11 +15,15 @@ const deployedLinks = {
   "WHTMark": "https://whtmark-1.onrender.com"
 };
 
-// Existing main projects
+// Featured projects in specific order
 const mainProjects = [
+  "TrustHire",
   "AI-Powered-Operational-Efficiency",
+  "WHTMark",
   "RECO-Resume-CoverLetterBuilder",
-  "WHTMark"
+  "hotel-booking-app",
+  "SpendSense",
+  "My_Portfolio"
 ];
 
 // NEW: Projects you are currently working on
@@ -28,7 +32,13 @@ const workingOnProjects = ["ai-agentica", "Finova"];
 function Github() {
   const repos = useLoaderData();
 
-  const mainRepos = repos.filter(repo => mainProjects.includes(repo.name));
+  console.log("All repos:", repos.map(r => r.name));
+  console.log("mainProjects:", mainProjects);
+
+  // Map over mainProjects to preserve order and find matching repos
+  const mainRepos = mainProjects
+    .map(name => repos.find(repo => repo.name === name))
+    .filter(Boolean);
 
   // Working on projects in fixed order: Finova first, then ai-agentica
   const workingOnRepos = workingOnProjects
