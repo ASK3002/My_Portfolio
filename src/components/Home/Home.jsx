@@ -96,7 +96,7 @@ export default function Home() {
 
           {/* My Resume Card */}
           <a
-            href="https://drive.google.com/file/d/19l_V2Oa62epyFrp3K0IoKX_0CqaDhrV1/view?usp=sharing"
+            href="https://drive.google.com/file/d/1zFeg1BVruIkGFcLDcaR-Oc9N6cBHCzHR/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-card"
