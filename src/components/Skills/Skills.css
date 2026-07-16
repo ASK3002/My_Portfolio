@@ -4,7 +4,6 @@
   padding: 120px 24px 48px;
   position: relative;
   z-index: 10;
-  background: var(--bg-primary, #0a0a0a);
   color: var(--text-primary, #ffffff);
   display: block !important;
   visibility: visible !important;
@@ -133,6 +132,17 @@
   z-index: 2;
 }
 
+.dark-icon-bg {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid rgba(227, 212, 212, 0.12);
+}
+
 .skill-icon {
   font-size: 2.5rem;
   transition: all var(--transition-normal);
@@ -203,6 +213,23 @@
 .skill-icon-microsoft { color: #00a4ef; }
 .skill-icon-cloud { color: #3448eb; }
 .skill-icon-email { color: #ff4c4c; }
+.skill-icon-typescript { color: #3178c6; }
+.skill-icon-nextjs { color: #000000; }
+.skill-icon-tailwind { color: #06b6d4; }
+.skill-icon-rest { color: #009688; }
+.skill-icon-auth { color: #6366f1; }
+.skill-icon-postgresql { color: #336791; }
+.skill-icon-numpy { color: #013243; }
+.skill-icon-pandas { color: #150458; }
+.skill-icon-matplotlib { color: #11557c; }
+.skill-icon-scikitlearn { color: #f7931e; }
+.skill-icon-tensorflow { color: #ff6f00; }
+.skill-icon-aws { color: #ff9900; }
+.skill-icon-gcp { color: #4285f4; }
+.skill-icon-github { color: #ffffff; }
+.skill-icon-cloudinary { color: #3448eb; }
+.skill-icon-emailjs { color: #ff4c4c; }
+.skill-icon-office { color: #00a4ef; }
 
 /* Light Theme - Enhanced Icon Visibility */
 [data-theme="light"] .skill-icon-cpp { color: #00599c; filter: brightness(0.8) contrast(1.2); }
@@ -227,6 +254,23 @@
 [data-theme="light"] .skill-icon-microsoft { color: #0284c7; filter: brightness(0.8) contrast(1.2); }
 [data-theme="light"] .skill-icon-cloud { color: #6366f1; filter: brightness(0.8) contrast(1.2); }
 [data-theme="light"] .skill-icon-email { color: #dc2626; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-typescript { color: #2563eb; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-nextjs { color: #1e293b; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-tailwind { color: #0891b2; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-rest { color: #0d9488; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-auth { color: #4f46e5; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-postgresql { color: #0369a1; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-numpy { color: #0c4a6e; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-pandas { color: #1e1b4b; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-matplotlib { color: #0c4a6e; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-scikitlearn { color: #c2410c; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-tensorflow { color: #c2410c; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-aws { color: #d97706; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-gcp { color: #2563eb; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-github { color: #1e293b; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-cloudinary { color: #4f46e5; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-emailjs { color: #dc2626; filter: brightness(0.8) contrast(1.2); }
+[data-theme="light"] .skill-icon-office { color: #0284c7; filter: brightness(0.8) contrast(1.2); }
 
 /* Responsive Design */
 @media (max-width: 1024px) {

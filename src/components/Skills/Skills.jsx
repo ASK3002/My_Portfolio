@@ -6,17 +6,21 @@ import {
   FaPython,
   FaReact,
   FaNode,
-  FaPhp,
   FaGit,
   FaDocker,
   FaMicrosoft,
   FaCloud,
   FaEnvelope,
+  FaGithub,
+  FaServer,
+  FaUserShield,
+  FaAws,
 } from 'react-icons/fa';
 
 import {
   SiCplusplus,
   SiJavascript,
+  SiTypescript,
   SiMysql,
   SiMongodb,
   SiExpress,
@@ -24,39 +28,123 @@ import {
   SiReplit,
   SiVite,
   SiRedux,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiPostgresql,
+  SiNumpy,
+  SiPandas,
+  SiScikitlearn,
+  SiTensorflow,
+  SiGooglecloud,
 } from 'react-icons/si';
+
+import { TbChartDots, TbApi } from 'react-icons/tb';
 
 import { motion } from 'framer-motion';
 import { containerVariants, itemVariants } from '../PageTransition/PageTransition';
 import './Skills.css';
 
-const programmingStack = [
-  { name: 'C++', icon: <SiCplusplus className="skill-icon skill-icon-cpp" />, level: 'Advanced', category: 'Programming' },
-  { name: 'Python', icon: <FaPython className="skill-icon skill-icon-python" />, level: 'Advanced', category: 'Programming' },
-  { name: 'C', icon: <span className="skill-icon skill-icon-c">C</span>, level: 'Intermediate', category: 'Programming' },
-  { name: 'Java', icon: <FaJava className="skill-icon skill-icon-java" />, level: 'Intermediate', category: 'Programming' },
-  { name: 'JavaScript', icon: <SiJavascript className="skill-icon skill-icon-js" />, level: 'Advanced', category: 'Frontend' },
-  { name: 'PHP', icon: <FaPhp className="skill-icon skill-icon-php" />, level: 'Intermediate', category: 'Backend' },
-  { name: 'SQL', icon: <span className="skill-icon skill-icon-sql">SQL</span>, level: 'Advanced', category: 'Database' },
-  { name: 'ReactJS', icon: <FaReact className="skill-icon skill-icon-react" />, level: 'Advanced', category: 'Frontend' },
-  { name: 'Node.js', icon: <FaNode className="skill-icon skill-icon-node" />, level: 'Advanced', category: 'Backend' },
-  { name: 'Express.js', icon: <SiExpress className="skill-icon skill-icon-express" />, level: 'Advanced', category: 'Backend' },
-  { name: 'MongoDB', icon: <SiMongodb className="skill-icon skill-icon-mongodb" />, level: 'Intermediate', category: 'Database' },
-  { name: 'MySQL', icon: <SiMysql className="skill-icon skill-icon-mysql" />, level: 'Advanced', category: 'Database' },
-  { name: 'Vite', icon: <SiVite className="skill-icon skill-icon-vite" />, level: 'Intermediate', category: 'Tools' },
-  { name: 'Redux', icon: <SiRedux className="skill-icon skill-icon-redux" />, level: 'Intermediate', category: 'Frontend' },
-];
+const skillsData = {
+  languages: [
+    { name: 'C++', icon: <SiCplusplus className="skill-icon skill-icon-cpp" />, level: 'Advanced', darkIcon: false },
+    { name: 'Python', icon: <FaPython className="skill-icon skill-icon-python" />, level: 'Advanced', darkIcon: false },
+    { name: 'C', icon: <span className="skill-icon skill-icon-c">C</span>, level: 'Intermediate', darkIcon: false },
+    { name: 'Java', icon: <FaJava className="skill-icon skill-icon-java" />, level: 'Intermediate', darkIcon: false },
+    { name: 'JavaScript', icon: <SiJavascript className="skill-icon skill-icon-js" />, level: 'Advanced', darkIcon: false },
+    { name: 'TypeScript', icon: <SiTypescript className="skill-icon skill-icon-typescript" />, level: 'Intermediate', darkIcon: false },
+    { name: 'PHP', icon: <span className="skill-icon skill-icon-php">PHP</span>, level: 'Intermediate', darkIcon: false },
+    { name: 'SQL', icon: <span className="skill-icon skill-icon-sql">SQL</span>, level: 'Advanced', darkIcon: false },
+  ],
+  frameworks: [
+    { name: 'React.js', icon: <FaReact className="skill-icon skill-icon-react" />, level: 'Advanced', darkIcon: false },
+    { name: 'Redux Toolkit', icon: <SiRedux className="skill-icon skill-icon-redux" />, level: 'Intermediate', darkIcon: false },
+    { name: 'Next.js', icon: <SiNextdotjs className="skill-icon skill-icon-nextjs" />, level: 'Intermediate', darkIcon: true },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss className="skill-icon skill-icon-tailwind" />, level: 'Advanced', darkIcon: false },
+    { name: 'Node.js', icon: <FaNode className="skill-icon skill-icon-node" />, level: 'Advanced', darkIcon: false },
+    { name: 'Express.js', icon: <SiExpress className="skill-icon skill-icon-express" />, level: 'Advanced', darkIcon: true },
+    { name: 'Vite', icon: <SiVite className="skill-icon skill-icon-vite" />, level: 'Intermediate', darkIcon: false },
+  ],
+  backend: [
+    { name: 'REST APIs', icon: <TbApi className="skill-icon skill-icon-rest" />, level: 'Advanced', darkIcon: false },
+    { name: 'Authentication', icon: <FaUserShield className="skill-icon skill-icon-auth" />, level: 'Intermediate', darkIcon: false },
+    { name: 'MongoDB', icon: <SiMongodb className="skill-icon skill-icon-mongodb" />, level: 'Intermediate', darkIcon: false },
+    { name: 'MySQL', icon: <SiMysql className="skill-icon skill-icon-mysql" />, level: 'Advanced', darkIcon: false },
+    { name: 'PostgreSQL', icon: <SiPostgresql className="skill-icon skill-icon-postgresql" />, level: 'Intermediate', darkIcon: false },
+  ],
+  ai: [
+    { name: 'NumPy', icon: <SiNumpy className="skill-icon skill-icon-numpy" />, level: 'Intermediate', darkIcon: true },
+    { name: 'Pandas', icon: <SiPandas className="skill-icon skill-icon-pandas" />, level: 'Intermediate', darkIcon: true },
+    { name: 'Matplotlib', icon: <TbChartDots className="skill-icon skill-icon-matplotlib" />, level: 'Intermediate', darkIcon: false },
+    { name: 'Scikit-learn', icon: <SiScikitlearn className="skill-icon skill-icon-scikitlearn" />, level: 'Intermediate', darkIcon: false },
+    { name: 'TensorFlow', icon: <SiTensorflow className="skill-icon skill-icon-tensorflow" />, level: 'Intermediate', darkIcon: false },
+  ],
+  cloud: [
+    { name: 'Docker', icon: <FaDocker className="skill-icon skill-icon-docker" />, level: 'Intermediate', darkIcon: false },
+    { name: 'AWS', icon: <FaAws className="skill-icon skill-icon-aws" />, level: 'Intermediate', darkIcon: false },
+    { name: 'Google Cloud', icon: <SiGooglecloud className="skill-icon skill-icon-gcp" />, level: 'Intermediate', darkIcon: false },
+  ],
+  tools: [
+    { name: 'Git', icon: <FaGit className="skill-icon skill-icon-git" />, level: 'Advanced', darkIcon: false },
+    { name: 'GitHub', icon: <FaGithub className="skill-icon skill-icon-github" />, level: 'Advanced', darkIcon: false },
+    { name: 'VS Code', icon: <FaCode className="skill-icon skill-icon-vscode" />, level: 'Advanced', darkIcon: false },
+    { name: 'Postman', icon: <SiPostman className="skill-icon skill-icon-postman" />, level: 'Advanced', darkIcon: false },
+    { name: 'Replit', icon: <SiReplit className="skill-icon skill-icon-replit" />, level: 'Intermediate', darkIcon: false },
+    { name: 'Cloudinary', icon: <FaCloud className="skill-icon skill-icon-cloudinary" />, level: 'Intermediate', darkIcon: false },
+    { name: 'EmailJS', icon: <FaEnvelope className="skill-icon skill-icon-emailjs" />, level: 'Intermediate', darkIcon: false },
+    { name: 'Microsoft Office', icon: <FaMicrosoft className="skill-icon skill-icon-office" />, level: 'Advanced', darkIcon: false },
+  ],
+};
 
-const toolsAndTechnologies = [
-  { name: 'Git', icon: <FaGit className="skill-icon skill-icon-git" />, level: 'Advanced', category: 'Version Control' },
-  { name: 'Docker', icon: <FaDocker className="skill-icon skill-icon-docker" />, level: 'Intermediate', category: 'DevOps' },
-  { name: 'VS Code', icon: <FaCode className="skill-icon skill-icon-vscode" />, level: 'Advanced', category: 'IDE' },
-  { name: 'Postman', icon: <SiPostman className="skill-icon skill-icon-postman" />, level: 'Advanced', category: 'API Testing' },
-  { name: 'Replit', icon: <SiReplit className="skill-icon skill-icon-replit" />, level: 'Intermediate', category: 'IDE' },
-  { name: 'Microsoft', icon: <FaMicrosoft className="skill-icon skill-icon-microsoft" />, level: 'Advanced', category: 'Office' },
-  { name: 'Cloudinary', icon: <FaCloud className="skill-icon skill-icon-cloud" />, level: 'Intermediate', category: 'Cloud' },
-  { name: 'EmailJS', icon: <FaEnvelope className="skill-icon skill-icon-email" />, level: 'Intermediate', category: 'Email Service' },
-];
+const categoryConfig = {
+  languages: { title: 'Languages', icon: <FaCode className="category-icon" /> },
+  frameworks: { title: 'Frameworks & Libraries', icon: <FaReact className="category-icon" /> },
+  backend: { title: 'Backend & Databases', icon: <FaServer className="category-icon" /> },
+  ai: { title: 'AI / Machine Learning', icon: <TbChartDots className="category-icon" /> },
+  cloud: { title: 'Cloud & DevOps', icon: <FaDocker className="category-icon" /> },
+  tools: { title: 'Tools & Technologies', icon: <FaTools className="category-icon" /> },
+};
+
+const SkillCard = ({ item }) => (
+  <motion.div
+    className="skill-card"
+    variants={itemVariants}
+    whileHover={{
+      y: -8,
+      scale: 1.02,
+      boxShadow: '0 25px 50px rgba(139, 92, 246, 0.3)'
+    }}
+    transition={{ type: 'spring', stiffness: 300 }}
+  >
+    <div className="skill-icon-wrapper">
+      <div className={item.darkIcon ? "dark-icon-bg" : ""}>
+        {item.icon}
+      </div>
+    </div>
+    <span className="skill-name">
+      {item.name}
+    </span>
+    <div className="skill-details">
+      <span className="skill-level">{item.level}</span>
+    </div>
+  </motion.div>
+);
+
+const CategorySection = ({ categoryKey, skills, config }) => (
+  <motion.div className="skills-category" variants={itemVariants}>
+    <div className="category-header">
+      {config.icon}
+      <h2 className="category-title">
+        {config.title}
+      </h2>
+    </div>
+
+    <div className="skills-grid">
+      {skills.map((item, index) => (
+        <SkillCard key={index} item={item} />
+      ))}
+    </div>
+  </motion.div>
+);
 
 export default function Skills() {
   return (
@@ -78,79 +166,15 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        {/* Programming Stack */}
-        <motion.div className="skills-category" variants={itemVariants}>
-          <div className="category-header">
-            <FaCode className="category-icon" />
-            <h2 className="category-title">
-              Programming Stack
-            </h2>
-          </div>
-
-          <div className="skills-grid">
-            {programmingStack.map((item, index) => (
-              <motion.div
-                key={index}
-                className="skill-card"
-                variants={itemVariants}
-                whileHover={{ 
-                  y: -8,
-                  scale: 1.02,
-                  boxShadow: '0 25px 50px rgba(139, 92, 246, 0.3)'
-                }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <div className="skill-icon-wrapper">
-                  {item.icon}
-                </div>
-                <span className="skill-name">
-                  {item.name}
-                </span>
-                <div className="skill-details">
-                  <span className="skill-level">{item.level}</span>
-                  <span className="skill-category">{item.category}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Tools & Tech */}
-        <motion.div className="skills-category" variants={itemVariants}>
-          <div className="category-header">
-            <FaTools className="category-icon" />
-            <h2 className="category-title">
-              Tools & Technologies
-            </h2>
-          </div>
-
-          <div className="skills-grid">
-            {toolsAndTechnologies.map((item, index) => (
-              <motion.div
-                key={index}
-                className="skill-card"
-                variants={itemVariants}
-                whileHover={{ 
-                  y: -8,
-                  scale: 1.02,
-                  boxShadow: '0 25px 50px rgba(139, 92, 246, 0.3)'
-                }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <div className="skill-icon-wrapper">
-                  {item.icon}
-                </div>
-                <span className="skill-name">
-                  {item.name}
-                </span>
-                <div className="skill-details">
-                  <span className="skill-level">{item.level}</span>
-                  <span className="skill-category">{item.category}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        {/* Categories */}
+        {Object.keys(skillsData).map((categoryKey) => (
+          <CategorySection
+            key={categoryKey}
+            categoryKey={categoryKey}
+            skills={skillsData[categoryKey]}
+            config={categoryConfig[categoryKey]}
+          />
+        ))}
       </div>
     </motion.section>
   );
