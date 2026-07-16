@@ -6,6 +6,7 @@ import { containerVariants, itemVariants } from '../PageTransition/PageTransitio
 import './Projects.css';
 
 const deployedLinks = {
+  "TrustHire": "https://trust-hire-work-exp-auth.netlify.app/",
   "Basic_React_Projects": "https://ask3002.github.io/Basic_React_Projects/",
   "BASIC_PROJECTS_HTML_CSS_JS": "https://ask3002.github.io/BASIC_PROJECTS_HTML_CSS_JS/",
   "My_Portfolio": "https://ayushsinghkaushik-portfolio.netlify.app/",
